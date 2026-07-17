@@ -1,200 +1,259 @@
 import { motion } from "framer-motion";
 import {
-  Download, Mail, ChevronDown, Cloud, Shield, Server, Network,
-  Database, Lock, Monitor, Globe, Users, Zap, CheckCircle2,
-  Briefcase, GraduationCap, Award, Github, Linkedin, Phone, MapPin,
-  Building2, Sparkles, Terminal, Layers, Send
+  Download, Mail, Cloud, Shield, Server, Network, Lock, Monitor,
+  Users, CheckCircle2, Briefcase, GraduationCap, Award, Linkedin,
+  Phone, MapPin, Building2, Layers, Send, ArrowUpRight, Sparkles,
+  Terminal, Database, Globe,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+
+const AVATAR =
+  "https://api.dicebear.com/9.x/notionists/svg?seed=Sarfraaj&backgroundColor=fecaca,bae6fd,ddd6fe&backgroundType=gradientLinear&radius=20";
 
 // ---------- HERO ----------
 export function Hero() {
   return (
-    <section id="top" className="relative min-h-screen flex items-center pt-32 pb-24 px-6">
-      <div className="max-w-6xl mx-auto w-full">
-        {/* Greeting row with avatar */}
+    <section id="top" className="relative min-h-screen flex items-center pt-28 pb-16 px-6">
+      <div className="max-w-[1200px] mx-auto w-full">
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex items-center gap-4 mb-10"
+          className="inline-flex items-center gap-2 pill px-3 py-1.5 mb-10 md:mb-14"
         >
-          <div className="relative">
-            <div className="absolute inset-0 rounded-full bg-primary/50 blur-2xl animate-pulse-glow" />
-            <img
-              src="https://api.dicebear.com/9.x/notionists/svg?seed=Sarfraaj&backgroundColor=6d28d9,7c3aed,8b5cf6&backgroundType=gradientLinear"
-              alt="Sarfraaj avatar"
-              className="relative h-16 w-16 rounded-full ring-2 ring-primary/60 shadow-[0_0_40px_oklch(0.62_0.28_300/0.6)] bg-secondary"
-            />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-hand text-2xl text-cyan leading-none">Hello! I am</span>
-            <span className="font-display text-2xl font-semibold tracking-tight">Sarfraaj Khan</span>
-          </div>
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-lime" />
+          </span>
+          <span className="font-mono text-[11px] tracking-[0.2em] uppercase text-ink">
+            Available · Q1 2026
+          </span>
         </motion.div>
 
-        {/* Huge annotated headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display font-extrabold leading-[0.95] tracking-[-0.04em] text-[3.25rem] sm:text-7xl md:text-8xl lg:text-[8.5rem]"
-        >
-          <span className="text-foreground">An IT Engineer </span>
-          <span className="font-hand text-cyan text-[0.55em] align-middle mx-2">who</span>
-          <br />
-          <span className="text-foreground">makes systems </span>
-          <span className="relative inline-block">
-            <span className="text-violet-glow">just&nbsp;work</span>
-            {/* hand-drawn circle */}
-            <svg
-              className="absolute -inset-x-4 -inset-y-3 w-[calc(100%+2rem)] h-[calc(100%+1.5rem)] pointer-events-none"
-              viewBox="0 0 400 140"
-              preserveAspectRatio="none"
-              fill="none"
+        <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
+          {/* Headline */}
+          <div>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.05 }}
+              className="font-display font-black leading-[0.92] tracking-[-0.05em] text-[3.2rem] sm:text-6xl md:text-7xl lg:text-[7.2rem] text-ink"
             >
-              <motion.ellipse
-                cx="200" cy="70" rx="188" ry="58"
-                stroke="oklch(0.82 0.16 315)" strokeWidth="2.5" strokeLinecap="round"
-                strokeDasharray="900"
-                initial={{ strokeDashoffset: 900 }}
-                animate={{ strokeDashoffset: 0 }}
-                transition={{ duration: 1.8, delay: 0.9, ease: "easeInOut" }}
-              />
-            </svg>
-          </span>
-          <span className="text-foreground">.</span>
-        </motion.h1>
+              IT engineer
+              <br />
+              keeping{" "}
+              <span className="font-italic-serif text-lime font-normal italic">
+                systems,
+              </span>
+              <br />
+              networks &amp;
+              <br />
+              people online.
+            </motion.h1>
 
-        {/* Sub with hand-scribble underline */}
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
-          className="mt-10 text-lg md:text-xl text-muted-foreground max-w-2xl"
-        >
-          Currently{" "}
-          <span className="relative text-foreground font-medium">
-            IT Executive at Prasatti Group
-            <svg className="absolute left-0 right-0 -bottom-2 w-full" height="8" viewBox="0 0 300 8" preserveAspectRatio="none">
-              <path d="M2 5 Q 75 1, 150 4 T 298 3" stroke="oklch(0.72 0.22 320)" strokeWidth="2" fill="none" strokeLinecap="round" />
-            </svg>
-          </span>
-          . Four+ years supporting enterprise environments — Microsoft 365, Azure,
-          Windows Server, endpoint security and everything in between.
-        </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mt-8 max-w-xl text-[15px] md:text-base text-muted-foreground leading-relaxed"
+            >
+              I&apos;m <span className="text-ink font-medium">Sarfraaj</span> — an IT
+              Support Engineer with 3.8+ years across Microsoft 365, Azure Administration,
+              Windows Server, endpoint security, networking and enterprise
+              hardware.
+            </motion.p>
 
-        {/* CTA row */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-10 flex flex-wrap items-center gap-3"
-        >
-          <a href="#" className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-[0_14px_40px_-10px_oklch(0.6_0.28_300/0.8)] hover:shadow-[0_20px_50px_-10px_oklch(0.6_0.28_300/1)] transition-all">
-            <Download className="h-4 w-4" /> Download Resume
-          </a>
-          <a href="#contact" className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold glass glow-border hover:bg-white/10 transition-all">
-            <Mail className="h-4 w-4" /> Let's talk
-          </a>
-          <span className="font-hand text-xl text-cyan ml-2 hidden md:inline">↙ start here</span>
-        </motion.div>
-
-        {/* floating tech chip row */}
-        <div className="mt-16 flex flex-wrap items-center gap-3">
-          {[
-            { icon: Cloud, label: "M365" },
-            { icon: Layers, label: "Azure" },
-            { icon: Server, label: "Win Server" },
-            { icon: Shield, label: "EDR" },
-            { icon: Network, label: "Networking" },
-            { icon: Monitor, label: "macOS" },
-            { icon: Lock, label: "Security" },
-          ].map((c, i) => (
             <motion.div
-              key={c.label}
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 3 + i * 0.25, repeat: Infinity, ease: "easeInOut", delay: i * 0.15 }}
-              className="inline-flex items-center gap-2 rounded-full glass px-3.5 py-1.5 text-xs text-muted-foreground"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
+              className="mt-10 flex flex-wrap items-center gap-3"
             >
-              <c.icon className="h-3.5 w-3.5 text-cyan" /> {c.label}
+              <a
+                href="#projects"
+                className="group inline-flex items-center gap-2 rounded-full pl-5 pr-2 py-2 text-sm font-medium bg-ink text-paper hover:opacity-90 transition"
+              >
+                See the work
+                <span className="h-7 w-7 rounded-full bg-paper/15 grid place-items-center group-hover:rotate-45 transition-transform">
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </span>
+              </a>
+              <a
+                href="#contact"
+                className="text-[13px] uppercase tracking-[0.2em] font-mono text-ink hover:text-lime transition"
+              >
+                Get in touch
+              </a>
             </motion.div>
-          ))}
-        </div>
-      </div>
+          </div>
 
-      <motion.a
-        href="#about"
-        aria-label="Scroll"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, y: [0, 8, 0] }}
-        transition={{ opacity: { delay: 1 }, y: { duration: 2, repeat: Infinity } }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground"
-      >
-        <ChevronDown className="h-6 w-6" />
-      </motion.a>
+          {/* Portrait card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, y: 14 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative mx-auto w-full max-w-sm"
+          >
+            <div className="paper-card rounded-[28px] p-3 relative">
+              <div className="relative rounded-[20px] overflow-hidden bg-gradient-to-br from-rose-100 via-white to-sky-100 aspect-[4/5]">
+                <img
+                  src={AVATAR}
+                  alt="Sarfraaj Khan portrait"
+                  className="w-full h-full object-cover"
+                />
+                {/* now chip */}
+                <motion.div
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute top-3 left-3 pill px-3 py-1.5 flex items-center gap-2"
+                >
+                  <div className="flex flex-col leading-none">
+                    <span className="micro-label">Now</span>
+                    <span className="text-[13px] font-medium text-ink">Keeping IT up</span>
+                  </div>
+                </motion.div>
+                {/* years chip */}
+                <motion.div
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute bottom-3 right-3 pill px-3 py-1.5 flex items-center gap-2"
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-lime" />
+                  <span className="font-mono text-[11px] tracking-[0.16em] uppercase text-ink">3.8 yrs · craft</span>
+                </motion.div>
+                <div className="absolute bottom-3 left-3">
+                  <div className="micro-label">Engineer · Portrait</div>
+                  <div className="font-display font-bold text-ink text-lg leading-none mt-1">Sarfraaj K.</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Bottom row */}
+        <div className="mt-16 flex flex-wrap items-center justify-between gap-6 pt-6 border-t border-black/10">
+          <div className="flex items-center gap-3">
+            <span className="micro-label">Scroll</span>
+            <span className="h-px w-14 bg-ink/40" />
+          </div>
+          <div className="micro-label">Gurugram, Haryana · Remote friendly</div>
+        </div>
+
+        {/* Marquee tech row */}
+        <LogoMarquee />
+      </div>
     </section>
   );
 }
 
-// ---------- SECTION HEADER ----------
-function SectionHeader({ eyebrow, title, description }: { eyebrow: string; title: string; description?: string }) {
+function LogoMarquee() {
+  const items = [
+    "Microsoft 365", "Azure", "Windows Server", "Active Directory",
+    "Intune", "Entra ID", "Google Workspace", "EDR / EPP",
+    "Firewall", "VPN", "macOS", "Windows 11",
+  ];
+  const doubled = [...items, ...items];
   return (
-    <div className="max-w-3xl mb-14">
-      <div className="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-xs text-cyan mb-4">
-        <Sparkles className="h-3 w-3" /> {eyebrow}
+    <div className="mt-16 relative overflow-hidden">
+      <div className="flex gap-10 animate-marquee whitespace-nowrap w-max">
+        {doubled.map((t, i) => (
+          <div key={i} className="flex items-center gap-3">
+            <span className="h-1.5 w-1.5 rounded-full bg-ink/40" />
+            <span className="font-display font-bold text-2xl md:text-3xl text-ink/70">{t}</span>
+          </div>
+        ))}
       </div>
-      <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">{title}</h2>
-      {description && <p className="mt-4 text-muted-foreground text-lg">{description}</p>}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent" />
+    </div>
+  );
+}
+
+// ---------- SECTION HEADER ----------
+function SectionHeader({
+  index, eyebrow, title, description,
+}: {
+  index: string; eyebrow: string; title: React.ReactNode; description?: string;
+}) {
+  return (
+    <div className="mb-14">
+      <div className="micro-label mb-6">/ {index} — {eyebrow}</div>
+      <h2 className="font-display font-black tracking-[-0.045em] leading-[0.96] text-4xl md:text-6xl lg:text-[4.5rem] text-ink max-w-4xl">
+        {title}
+      </h2>
+      {description && (
+        <p className="mt-6 text-muted-foreground text-base md:text-lg max-w-2xl leading-relaxed">
+          {description}
+        </p>
+      )}
     </div>
   );
 }
 
 // ---------- ABOUT ----------
 export function About() {
+  const chips = [
+    { k: "Product", v: "IT Ops · Endpoint · Cloud" },
+    { k: "Support", v: "L1 · L2 · Remote" },
+    { k: "Cloud", v: "M365 · Azure · Workspace" },
+    { k: "Security", v: "EDR · Firewall · VPN" },
+    { k: "Tools", v: "Intune · AD · PowerShell" },
+    { k: "Based in", v: "Gurugram, IN · Remote" },
+  ];
   return (
-    <section id="about" className="relative py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <SectionHeader eyebrow="About" title="I make enterprise IT invisible — in the best way." />
-        <div className="grid lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-3 space-y-5 text-muted-foreground leading-relaxed">
-            <p>
-              Hello, I'm <span className="text-foreground font-medium">Sarfraaj Khan</span>, an IT Support
-              Engineer passionate about solving technology challenges and building dependable IT
-              environments.
-            </p>
-            <p>
-              Over the past four years, I've worked across enterprise organizations supporting Windows and
-              macOS environments, Microsoft 365, Azure Administration, Google Workspace, Windows Server,
-              endpoint protection, networking, and enterprise hardware.
-            </p>
-            <p>
-              My expertise extends beyond troubleshooting — I contribute to infrastructure planning, vendor
-              coordination, endpoint security implementation, asset lifecycle management, Microsoft
-              licensing, and enterprise technology operations.
-            </p>
-            <p className="text-foreground">
-              Great IT support isn't just fixing problems — it's preventing them before they happen.
-            </p>
+    <section id="about" className="relative py-24 md:py-32 px-6">
+      <div className="max-w-[1200px] mx-auto">
+        <SectionHeader
+          index="01"
+          eyebrow="About"
+          title={
+            <>
+              Reliable IT that just works —{" "}
+              <span className="font-italic-serif italic font-normal text-lime">from</span>{" "}
+              tickets to strategy.
+            </>
+          }
+          description="From daily L1/L2 support to Microsoft 365 & Azure administration, endpoint security rollouts and vendor coordination — I own the whole lifecycle of the systems people rely on."
+        />
+
+        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 items-start">
+          <div className="paper-card rounded-3xl p-3">
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-rose-100 via-white to-sky-100">
+              <img src={AVATAR} alt="Sarfraaj Khan" className="w-full h-full object-cover" />
+            </div>
           </div>
 
-          <div className="lg:col-span-2 space-y-4">
-            {[
-              { icon: Building2, label: "Currently at", value: "Prasatti Group" },
-              { icon: MapPin, label: "Based in", value: "Gurugram, Haryana" },
-              { icon: Briefcase, label: "Experience", value: "4+ years enterprise IT" },
-              { icon: GraduationCap, label: "Education", value: "Bachelor of Arts" },
-            ].map((row) => (
-              <div key={row.label} className="glass glow-border rounded-2xl p-4 flex items-center gap-4">
-                <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary/30 to-accent/30 grid place-items-center">
-                  <row.icon className="h-5 w-5 text-cyan" />
+          <div>
+            <div className="grid grid-cols-2 gap-3">
+              {chips.map((c) => (
+                <div key={c.k} className="paper-card rounded-2xl p-4">
+                  <div className="micro-label">{c.k}</div>
+                  <div className="mt-2 font-medium text-ink text-sm">{c.v}</div>
                 </div>
-                <div>
-                  <div className="text-xs text-muted-foreground">{row.label}</div>
-                  <div className="text-sm font-medium">{row.value}</div>
+              ))}
+            </div>
+            <div className="mt-6 paper-card rounded-3xl p-6">
+              <div className="micro-label mb-3">Experience</div>
+              <div className="flex items-baseline gap-4">
+                <div className="font-display font-black text-6xl md:text-7xl text-ink leading-none">3.8+</div>
+                <div className="text-sm text-muted-foreground max-w-xs">
+                  Years supporting enterprise environments across Microsoft 365, Azure,
+                  Windows Server, macOS and networking.
                 </div>
               </div>
-            ))}
+              <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+                {[
+                  "Shipped EDR & endpoint security across full org fleet",
+                  "500+ devices managed across two enterprise programs",
+                  "Owns vendor management, licensing & IT procurement",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-lime mt-0.5 shrink-0" />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -230,25 +289,22 @@ function Counter({ end, suffix = "" }: { end: number; suffix?: string }) {
 
 export function Stats() {
   const stats = [
-    { value: 4, suffix: "+", label: "Years Experience" },
-    { value: 1000, suffix: "+", label: "Issues Resolved" },
-    { value: 500, suffix: "+", label: "Devices Managed" },
-    { value: 99, suffix: "%", label: "User Satisfaction" },
-    { value: 50, suffix: "+", label: "IT Projects" },
+    { value: 4, suffix: "+", label: "Years in enterprise IT" },
+    { value: 1000, suffix: "+", label: "Tickets resolved" },
+    { value: 500, suffix: "+", label: "Endpoints managed" },
+    { value: 99, suffix: "%", label: "User satisfaction" },
   ];
   return (
-    <section className="relative py-16 px-6">
-      <div className="max-w-6xl mx-auto glass glow-border rounded-3xl p-8 md:p-10">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center md:text-left">
-              <div className="text-4xl md:text-5xl font-bold text-gradient font-display">
-                <Counter end={s.value} suffix={s.suffix} />
-              </div>
-              <div className="mt-2 text-xs md:text-sm text-muted-foreground">{s.label}</div>
+    <section className="relative px-6 pb-8">
+      <div className="max-w-[1200px] mx-auto paper-card rounded-3xl p-8 md:p-10 grid grid-cols-2 md:grid-cols-4 gap-8">
+        {stats.map((s) => (
+          <div key={s.label}>
+            <div className="font-display font-black text-4xl md:text-5xl text-ink leading-none">
+              <Counter end={s.value} suffix={s.suffix} />
             </div>
-          ))}
-        </div>
+            <div className="mt-3 micro-label">{s.label}</div>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -257,46 +313,35 @@ export function Stats() {
 // ---------- EXPERTISE ----------
 export function Expertise() {
   const groups = [
-    {
-      icon: Cloud,
-      title: "Cloud & Identity",
-      items: ["Microsoft 365", "Azure Administration", "Azure Active Directory", "Google Workspace", "Microsoft Licensing", "Identity Management"],
-    },
-    {
-      icon: Server,
-      title: "Systems & Servers",
-      items: ["Windows Server", "Active Directory", "Group Policy", "Windows 10 / 11", "macOS", "Software Deployment"],
-    },
-    {
-      icon: Network,
-      title: "Networking",
-      items: ["TCP/IP", "DNS", "DHCP", "VPN", "Firewall", "Routing & Switching", "Network Troubleshooting"],
-    },
-    {
-      icon: Shield,
-      title: "Security",
-      items: ["Endpoint Security", "EDR", "Vulnerability Assessment", "Access Control", "Patch Management"],
-    },
-    {
-      icon: Monitor,
-      title: "End-User Support",
-      items: ["L1 / L2 Support", "Hardware Troubleshooting", "Printer Configuration", "Driver Management", "Ticketing Systems", "Remote Support"],
-    },
-    {
-      icon: Users,
-      title: "IT Operations",
-      items: ["Asset Management", "Vendor Management", "IT Procurement", "Meeting Room Tech", "Video Conferencing", "CCTV & Biometric"],
-    },
+    { n: "01", icon: Cloud, title: "Cloud & Identity",
+      items: ["Microsoft 365", "Azure Administration", "Entra ID", "Google Workspace", "Licensing", "MFA / Conditional Access"] },
+    { n: "02", icon: Server, title: "Systems & Servers",
+      items: ["Windows Server", "Active Directory", "Group Policy", "Windows 10 / 11", "macOS", "Software Deployment"] },
+    { n: "03", icon: Network, title: "Networking",
+      items: ["TCP/IP · DNS · DHCP", "VPN", "Firewall", "Routing & Switching", "PoE / Unmanaged", "Wi-Fi"] },
+    { n: "04", icon: Shield, title: "Security",
+      items: ["Endpoint Security", "EDR / EPP", "Vulnerability Scanning", "Patch Management", "Incident Response"] },
+    { n: "05", icon: Monitor, title: "End-User Support",
+      items: ["L1 / L2 Support", "Hardware Troubleshooting", "Printer Config", "Driver Management", "Ticketing", "Remote Support"] },
+    { n: "06", icon: Users, title: "IT Operations",
+      items: ["Asset Management", "Vendor Management", "IT Procurement", "AV / VC", "CCTV & Biometric", "Documentation"] },
   ];
   return (
-    <section id="expertise" className="relative py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="relative py-24 md:py-32 px-6">
+      <div className="max-w-[1200px] mx-auto">
         <SectionHeader
-          eyebrow="Core Expertise"
-          title="A full-stack IT engineer for the modern enterprise."
-          description="Six domains of deep, hands-on capability — from cloud identity to the endpoint on someone's desk."
+          index="02"
+          eyebrow="Skills"
+          title={
+            <>
+              Six domains,{" "}
+              <span className="font-italic-serif italic font-normal text-lime">one</span>{" "}
+              craft.
+            </>
+          }
+          description="A working toolkit built across 3.8+ years supporting enterprise fleets end-to-end."
         />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {groups.map((g, i) => (
             <motion.div
               key={g.title}
@@ -304,16 +349,19 @@ export function Expertise() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="glass glow-border rounded-2xl p-6 hover:-translate-y-1 transition-transform duration-300"
+              className="paper-card rounded-3xl p-6 hover:-translate-y-1 transition-transform"
             >
-              <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-primary/30 to-accent/30 grid place-items-center mb-4">
-                <g.icon className="h-5 w-5 text-cyan" />
+              <div className="flex items-center justify-between mb-6">
+                <div className="micro-label">{g.n}</div>
+                <div className="h-10 w-10 rounded-full bg-ink text-paper grid place-items-center">
+                  <g.icon className="h-4 w-4" />
+                </div>
               </div>
-              <h3 className="font-semibold text-lg mb-3">{g.title}</h3>
+              <h3 className="font-display font-bold text-2xl text-ink mb-4">{g.title}</h3>
               <ul className="space-y-1.5">
                 {g.items.map((it) => (
                   <li key={it} className="text-sm text-muted-foreground flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-cyan" /> {it}
+                    <span className="h-1 w-1 rounded-full bg-ink/40" /> {it}
                   </li>
                 ))}
               </ul>
@@ -325,88 +373,81 @@ export function Expertise() {
   );
 }
 
-// ---------- EXPERIENCE TIMELINE ----------
+// ---------- EXPERIENCE ----------
 export function Experience() {
   const jobs = [
     {
+      idx: "01",
       role: "IT Executive",
       company: "Prasatti Group Sales and Services",
-      period: "Nov 2024 – Present",
+      period: "May 2024 — Present",
       current: true,
-      points: [
-        "Microsoft 365 & Azure administration across the organization",
-        "User account, license, and identity lifecycle management",
-        "Google Workspace administration and configuration",
-        "Endpoint Detection and Response (EDR) deployment",
-        "Printer infrastructure, macOS & Windows support",
-        "Meeting room, projector, and biometric systems",
-        "Vendor coordination, IT procurement, infrastructure planning",
-        "L1 / L2 technical support and incident resolution",
-        "Asset lifecycle management & software deployment",
-      ],
+      summary:
+        "Own end-to-end IT operations: Microsoft 365 & Azure administration, endpoint security (EDR / EPP Cloud), Google Workspace, vendor management, meeting room tech and L1/L2 support.",
+      tags: ["M365", "Azure", "EDR", "Vendor Mgmt", "Google Workspace"],
     },
     {
-      role: "Desktop Support Engineer",
+      idx: "02",
+      role: "Desktop Support Engineer · L1 & L2",
       company: "Team Computers Pvt Ltd",
-      period: "Dec 2022 – Apr 2024",
+      period: "Dec 2022 — Apr 2024",
       current: false,
-      points: [
-        "Desktop, laptop deployment & hardware troubleshooting",
-        "Network and USB printer support, Brady printer configuration",
-        "macOS, iOS, Android device support",
-        "Remote support and inventory management",
-        "Firewall configuration and PoE switch support",
-        "Network troubleshooting, software installation",
-        "Asset & incident management, technical documentation",
-      ],
+      summary:
+        "Ran desktop, laptop and printer support at scale — including MacBook, iPad, iOS & Android troubleshooting, asset inventory, biometric attendance, firewall & PoE switch support.",
+      tags: ["Desktop", "MacBook", "Printers", "Firewall", "PoE"],
     },
   ];
 
   return (
-    <section id="experience" className="relative py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="experience" className="relative py-24 md:py-32 px-6">
+      <div className="max-w-[1200px] mx-auto">
         <SectionHeader
+          index="03"
           eyebrow="Experience"
-          title="Four years, two teams, thousands of tickets resolved."
+          title={
+            <>
+              3.8+ years across{" "}
+              <span className="font-italic-serif italic font-normal text-lime">SaaS,</span>{" "}
+              services & enterprise IT.
+            </>
+          }
+          description="Long-running roles supporting growing teams — from a national IT services provider to an in-house IT executive seat."
         />
-        <div className="relative">
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/60 via-accent/40 to-transparent" />
-          <div className="space-y-12">
-            {jobs.map((job, i) => (
-              <motion.div
-                key={job.role}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6 }}
-                className={`relative md:grid md:grid-cols-2 md:gap-12 ${i % 2 === 0 ? "" : "md:[direction:rtl]"}`}
-              >
-                <div className={`pl-12 md:pl-0 md:[direction:ltr] ${i % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
-                  <div className="absolute left-4 md:left-1/2 -translate-x-1/2 top-2 h-4 w-4 rounded-full bg-gradient-to-br from-primary to-accent shadow-[0_0_20px_oklch(0.68_0.2_255/0.9)]" />
-                  <div className="text-xs text-cyan font-mono mb-2">{job.period}</div>
-                  <h3 className="text-2xl font-bold">{job.role}</h3>
-                  <div className="text-muted-foreground mt-1">{job.company}</div>
-                  {job.current && (
-                    <span className="inline-block mt-3 text-[10px] uppercase tracking-widest px-2 py-1 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
-                      Current Role
+        <div className="space-y-4">
+          {jobs.map((j, i) => (
+            <motion.div
+              key={j.role}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="paper-card rounded-3xl p-6 md:p-8 grid md:grid-cols-[80px_1fr_auto] gap-6 items-start hover:-translate-y-0.5 transition-transform"
+            >
+              <div className="micro-label pt-2">{j.idx}</div>
+              <div>
+                <div className="flex items-center gap-3 flex-wrap">
+                  <h3 className="font-display font-bold text-2xl md:text-3xl text-ink">{j.role}</h3>
+                  {j.current && (
+                    <span className="micro-label text-lime flex items-center gap-1.5">
+                      <span className="h-1.5 w-1.5 rounded-full bg-lime" /> Current
                     </span>
                   )}
                 </div>
-                <div className={`pl-12 md:pl-0 md:[direction:ltr] mt-4 md:mt-0 ${i % 2 === 0 ? "md:pl-12" : "md:pr-12"}`}>
-                  <div className="glass glow-border rounded-2xl p-5">
-                    <ul className="space-y-2">
-                      {job.points.map((p) => (
-                        <li key={p} className="text-sm text-muted-foreground flex gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-cyan mt-0.5 flex-shrink-0" />
-                          <span>{p}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className="mt-1 text-sm text-muted-foreground">{j.company}</div>
+                <p className="mt-4 text-sm md:text-[15px] text-muted-foreground max-w-2xl leading-relaxed">
+                  {j.summary}
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {j.tags.map((t) => (
+                    <span key={t} className="text-[11px] font-mono uppercase tracking-[0.14em] px-2.5 py-1 rounded-full border border-black/10 text-ink/80">
+                      {t}
+                    </span>
+                  ))}
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+              <div className="micro-label md:text-right whitespace-nowrap">{j.period}</div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
@@ -416,82 +457,73 @@ export function Experience() {
 // ---------- PROJECTS ----------
 export function Projects() {
   const projects = [
-    { title: "Enterprise Microsoft 365 Administration", tag: "M365", icon: Cloud,
-      overview: "End-to-end M365 tenant administration across users, licensing, and services.",
-      tech: ["Exchange Online", "SharePoint", "Teams", "Intune"],
-      outcome: "Standardized licensing, reduced spend, streamlined onboarding by 60%." },
-    { title: "Azure User Lifecycle Management", tag: "Azure", icon: Layers,
-      overview: "Automated join/move/leave flows across Entra ID and downstream systems.",
-      tech: ["Entra ID", "Conditional Access", "PowerShell"],
-      outcome: "Cut onboarding from days to hours; zero orphan accounts." },
-    { title: "Endpoint Security Deployment", tag: "Security", icon: Shield,
-      overview: "Rolled out EDR across the fleet with policy tuning and response playbooks.",
-      tech: ["EDR", "Defender", "Patch Mgmt"],
-      outcome: "Full visibility across 500+ endpoints; incidents contained in minutes." },
-    { title: "Printer Infrastructure Overhaul", tag: "Infra", icon: Terminal,
-      overview: "Centralized print management with driver standardization and secure release.",
-      tech: ["Windows Print", "Brady", "Networked MFPs"],
-      outcome: "80% fewer print tickets, faster office moves." },
-    { title: "Enterprise Network Support", tag: "Network", icon: Network,
-      overview: "L1/L2 network operations across offices — switching, VPN, firewall rules.",
-      tech: ["PoE Switching", "VPN", "Firewall"],
-      outcome: "Uptime restored quickly; zero recurring incidents post-remediation." },
-    { title: "Meeting Room & AV Technology", tag: "AV", icon: Monitor,
-      overview: "Deployed and standardized meeting room tech across floors.",
-      tech: ["Projectors", "VC", "Biometric"],
-      outcome: "Consistent meeting experience; reduced AV disruptions." },
-    { title: "Google Workspace Administration", tag: "Workspace", icon: Globe,
-      overview: "Managed identity, mail routing, groups, and security posture in Workspace.",
-      tech: ["Admin Console", "Groups", "MDM"],
-      outcome: "Cleaner tenant, stronger security baseline." },
-    { title: "VPN Deployment & Remote Access", tag: "Access", icon: Lock,
-      overview: "Rolled out remote access for distributed teams with policy-driven controls.",
-      tech: ["VPN", "MFA", "Split tunneling"],
+    { n: "01", title: "Microsoft 365 Administration", tag: "M365", icon: Cloud,
+      overview: "Tenant administration across users, licensing, Exchange, SharePoint and Teams for the full org.",
+      outcome: "Standardized licensing · streamlined onboarding by 60%." },
+    { n: "02", title: "EDR / EPP Cloud Deployment", tag: "Security", icon: Shield,
+      overview: "Rolled out endpoint detection and response across the fleet with policy tuning and incident playbooks.",
+      outcome: "Full visibility across every endpoint · incidents contained in minutes." },
+    { n: "03", title: "Azure Identity & Licensing", tag: "Azure", icon: Layers,
+      overview: "Azure administration — user lifecycle, license assignment, mail/Office-365 solution and access.",
+      outcome: "Clean joiner/mover/leaver flow · zero orphan accounts." },
+    { n: "04", title: "Printer Infrastructure Overhaul", tag: "Infra", icon: Terminal,
+      overview: "Centralised print — driver standardisation, network + USB printers, Brady & touch printers.",
+      outcome: "~80% fewer print tickets · faster office moves." },
+    { n: "05", title: "Meeting Room & AV Standardisation", tag: "AV", icon: Monitor,
+      overview: "Projector, video conferencing and biometric configuration across floors — event & meeting management.",
+      outcome: "Consistent room experience · fewer AV disruptions." },
+    { n: "06", title: "Google Workspace Administration", tag: "Workspace", icon: Globe,
+      overview: "Identity, groups, security posture and mail routing in Workspace alongside M365.",
+      outcome: "Cleaner tenant · stronger security baseline." },
+    { n: "07", title: "Asset & Vendor Ops", tag: "Ops", icon: Database,
+      overview: "Single source of truth for hardware & software assets, license renewals and vendor coordination.",
+      outcome: "Accurate audits · zero missing devices." },
+    { n: "08", title: "Remote Access & VPN", tag: "Access", icon: Lock,
+      overview: "Policy-driven remote access with MFA for distributed staff.",
       outcome: "Secure, reliable access from anywhere." },
-    { title: "Asset Inventory System", tag: "Ops", icon: Database,
-      overview: "Built a single source of truth for hardware & software assets.",
-      tech: ["Inventory DB", "Lifecycle"],
-      outcome: "Accurate audits, better forecasting, zero missing devices." },
+    { n: "09", title: "L1 / L2 Support Operations", tag: "Support", icon: Users,
+      overview: "Owns hardware, software and networking tickets end to end, with remote support and vendor escalations.",
+      outcome: "Fast resolution · high user satisfaction." },
   ];
 
   return (
-    <section id="projects" className="relative py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="relative py-24 md:py-32 px-6">
+      <div className="max-w-[1200px] mx-auto">
         <SectionHeader
-          eyebrow="Featured Projects"
-          title="Selected work from the field."
-          description="Real infrastructure, real users, real business impact."
+          index="04"
+          eyebrow="Selected work"
+          title={
+            <>
+              Real infrastructure,{" "}
+              <span className="font-italic-serif italic font-normal text-lime">real</span>{" "}
+              business impact.
+            </>
+          }
+          description="A snapshot of programs shipped across Prasatti Group and Team Computers."
         />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((p, i) => (
             <motion.article
               key={p.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-              className="group relative glass glow-border rounded-2xl p-6 overflow-hidden hover:-translate-y-1 transition-transform duration-300"
+              transition={{ duration: 0.5, delay: (i % 3) * 0.06 }}
+              className="paper-card rounded-3xl p-6 hover:-translate-y-1 transition-transform group"
             >
-              <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-primary/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="flex items-center justify-between mb-4">
-                <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-primary/30 to-accent/30 grid place-items-center">
-                  <p.icon className="h-5 w-5 text-cyan" />
-                </div>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground px-2 py-1 rounded-full border border-white/10">
+              <div className="flex items-center justify-between mb-6">
+                <div className="micro-label">{p.n}</div>
+                <span className="text-[10px] font-mono uppercase tracking-[0.18em] px-2 py-1 rounded-full border border-black/10 text-ink/80">
                   {p.tag}
                 </span>
               </div>
-              <h3 className="font-semibold text-lg leading-tight">{p.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{p.overview}</p>
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {p.tech.map((t) => (
-                  <span key={t} className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-muted-foreground border border-white/10">
-                    {t}
-                  </span>
-                ))}
+              <div className="h-11 w-11 rounded-full bg-ink text-paper grid place-items-center mb-4">
+                <p.icon className="h-4 w-4" />
               </div>
-              <div className="mt-4 pt-4 border-t border-white/10 text-xs text-cyan flex items-start gap-2">
-                <Zap className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" />
+              <h3 className="font-display font-bold text-xl leading-tight text-ink">{p.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{p.overview}</p>
+              <div className="mt-5 pt-4 border-t border-black/10 flex items-start gap-2 text-xs text-ink/80">
+                <Sparkles className="h-3.5 w-3.5 text-lime shrink-0 mt-0.5" />
                 <span>{p.outcome}</span>
               </div>
             </motion.article>
@@ -502,55 +534,8 @@ export function Projects() {
   );
 }
 
-// ---------- SKILLS ----------
-export function Skills() {
-  const skills = [
-    { name: "Microsoft 365", level: 95 },
-    { name: "Azure Administration", level: 88 },
-    { name: "Windows Server & AD", level: 90 },
-    { name: "Windows 10 / 11", level: 96 },
-    { name: "macOS Support", level: 85 },
-    { name: "Networking (TCP/IP, DNS, DHCP)", level: 88 },
-    { name: "Firewall & VPN", level: 82 },
-    { name: "Google Workspace", level: 88 },
-    { name: "Endpoint Security & EDR", level: 86 },
-    { name: "Hardware & Deployment", level: 94 },
-    { name: "Remote Support & Ticketing", level: 96 },
-    { name: "Vendor & Project Management", level: 84 },
-  ];
-  return (
-    <section id="skills" className="relative py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <SectionHeader eyebrow="Technical Skills" title="Depth where it matters." />
-        <div className="grid md:grid-cols-2 gap-x-10 gap-y-6">
-          {skills.map((s, i) => (
-            <motion.div
-              key={s.name}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.03 }}
-            >
-              <div className="flex justify-between text-sm mb-2">
-                <span className="font-medium">{s.name}</span>
-                <span className="text-muted-foreground font-mono text-xs">{s.level}%</span>
-              </div>
-              <div className="h-2 rounded-full bg-white/5 overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${s.level}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-                  className="h-full rounded-full bg-gradient-to-r from-primary via-cyan to-accent shadow-[0_0_12px_oklch(0.68_0.2_255/0.7)]"
-                />
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+// Skills is a duplicate id; keep exported but return null to preserve existing imports
+export function Skills() { return null; }
 
 // ---------- CERTIFICATIONS ----------
 export function Certifications() {
@@ -563,15 +548,25 @@ export function Certifications() {
     { name: "Windows Server Administration", code: "WSA", status: "Completed" },
   ];
   const badge = (s: string) => {
-    if (s === "Completed") return "bg-emerald-500/15 text-emerald-300 border-emerald-500/30";
-    if (s === "In Progress") return "bg-amber-500/15 text-amber-300 border-amber-500/30";
-    return "bg-white/5 text-muted-foreground border-white/10";
+    if (s === "Completed") return "bg-lime/15 text-ink border-lime/40";
+    if (s === "In Progress") return "bg-amber-500/10 text-amber-700 border-amber-500/30";
+    return "bg-black/5 text-muted-foreground border-black/10";
   };
   return (
-    <section id="certifications" className="relative py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <SectionHeader eyebrow="Certifications" title="Credentials, current and forthcoming." />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <section id="certifications" className="relative py-24 md:py-32 px-6">
+      <div className="max-w-[1200px] mx-auto">
+        <SectionHeader
+          index="05"
+          eyebrow="Certifications"
+          title={
+            <>
+              Credentials,{" "}
+              <span className="font-italic-serif italic font-normal text-lime">current</span>{" "}
+              &amp; forthcoming.
+            </>
+          }
+        />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {certs.map((c, i) => (
             <motion.div
               key={c.name}
@@ -579,18 +574,18 @@ export function Certifications() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="glass glow-border rounded-2xl p-6 hover:-translate-y-1 transition-transform"
+              className="paper-card rounded-3xl p-6 hover:-translate-y-1 transition-transform"
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary/30 to-accent/30 grid place-items-center">
-                  <Award className="h-6 w-6 text-cyan" />
+              <div className="flex items-start justify-between mb-6">
+                <div className="h-11 w-11 rounded-full bg-ink text-paper grid place-items-center">
+                  <Award className="h-5 w-5" />
                 </div>
-                <span className={`text-[10px] uppercase tracking-widest px-2 py-1 rounded-full border ${badge(c.status)}`}>
+                <span className={`text-[10px] font-mono uppercase tracking-[0.18em] px-2 py-1 rounded-full border ${badge(c.status)}`}>
                   {c.status}
                 </span>
               </div>
-              <div className="text-xs font-mono text-cyan mb-1">{c.code}</div>
-              <h3 className="font-semibold">{c.name}</h3>
+              <div className="micro-label mb-1">{c.code}</div>
+              <h3 className="font-display font-bold text-ink">{c.name}</h3>
             </motion.div>
           ))}
         </div>
@@ -602,15 +597,24 @@ export function Certifications() {
 // ---------- TESTIMONIALS ----------
 export function Testimonials() {
   const items = [
-    { name: "Colleague, Prasatti Group", role: "Operations Lead", quote: "Sarfraaj takes ownership from the first ticket to the final rollout. IT just works when he's on it." },
-    { name: "Manager, Team Computers", role: "Service Delivery", quote: "Reliable, calm under pressure, and technically sharp. A safe pair of hands for enterprise support." },
+    { name: "Operations Lead", role: "Prasatti Group", quote: "Sarfraaj takes ownership from the first ticket to the final rollout. IT just works when he's on it." },
+    { name: "Service Delivery", role: "Team Computers", quote: "Reliable, calm under pressure and technically sharp. A safe pair of hands for enterprise support." },
     { name: "End User", role: "Enterprise Client", quote: "Fixes issues quickly and explains them clearly. Rare combination." },
   ];
   return (
-    <section className="relative py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <SectionHeader eyebrow="Testimonials" title="What people say." />
-        <div className="grid md:grid-cols-3 gap-5">
+    <section className="relative py-24 md:py-32 px-6">
+      <div className="max-w-[1200px] mx-auto">
+        <SectionHeader
+          index="06"
+          eyebrow="Kind words"
+          title={
+            <>
+              What people{" "}
+              <span className="font-italic-serif italic font-normal text-lime">say.</span>
+            </>
+          }
+        />
+        <div className="grid md:grid-cols-3 gap-4">
           {items.map((t, i) => (
             <motion.div
               key={i}
@@ -618,13 +622,13 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="glass glow-border rounded-2xl p-6"
+              className="paper-card rounded-3xl p-6"
             >
-              <div className="text-4xl font-display text-primary leading-none">"</div>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{t.quote}</p>
-              <div className="mt-6 pt-4 border-t border-white/10">
-                <div className="font-medium text-sm">{t.name}</div>
-                <div className="text-xs text-muted-foreground">{t.role}</div>
+              <div className="font-italic-serif italic text-5xl text-lime leading-none">&ldquo;</div>
+              <p className="mt-2 text-[15px] text-ink leading-relaxed">{t.quote}</p>
+              <div className="mt-6 pt-4 border-t border-black/10">
+                <div className="font-medium text-sm text-ink">{t.name}</div>
+                <div className="micro-label mt-0.5">{t.role}</div>
               </div>
             </motion.div>
           ))}
@@ -638,33 +642,40 @@ export function Testimonials() {
 export function Contact() {
   const [sent, setSent] = useState(false);
   return (
-    <section id="contact" className="relative py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="relative py-24 md:py-32 px-6">
+      <div className="max-w-[1200px] mx-auto">
         <SectionHeader
+          index="07"
           eyebrow="Contact"
-          title="Let's build something reliable."
-          description="Open to enterprise IT roles, consulting, and interesting problems."
+          title={
+            <>
+              Let&apos;s build something{" "}
+              <span className="font-italic-serif italic font-normal text-lime">reliable.</span>
+            </>
+          }
+          description="Open to enterprise IT roles, IT executive positions, and interesting infrastructure problems."
         />
-        <div className="grid lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-2 space-y-4">
+        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-6">
+          <div className="grid gap-3">
             {[
               { icon: Mail, label: "Email", value: "sarfaraajsince2004@gmail.com", href: "mailto:sarfaraajsince2004@gmail.com" },
-              { icon: Phone, label: "Phone", value: "Available on request", href: "#" },
-              { icon: MapPin, label: "Location", value: "Gurugram, Haryana, India", href: "#" },
+              { icon: Phone, label: "Phone", value: "+91 88264 57998", href: "tel:+918826457998" },
+              { icon: MapPin, label: "Location", value: "Gurugram, Haryana · India", href: "#" },
               { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/sarfraaj", href: "#" },
-              { icon: Github, label: "GitHub", value: "github.com/sarfraaj", href: "#" },
+              { icon: Building2, label: "Currently at", value: "Prasatti Group · IT Executive", href: "#" },
+              { icon: GraduationCap, label: "Education", value: "Bachelor of Arts", href: "#" },
             ].map((c) => (
               <a
                 key={c.label}
                 href={c.href}
-                className="flex items-center gap-4 glass glow-border rounded-2xl p-4 hover:bg-white/5 transition-colors"
+                className="flex items-center gap-4 paper-card rounded-2xl p-4 hover:-translate-y-0.5 transition-transform"
               >
-                <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary/30 to-accent/30 grid place-items-center">
-                  <c.icon className="h-5 w-5 text-cyan" />
+                <div className="h-10 w-10 rounded-full bg-ink text-paper grid place-items-center">
+                  <c.icon className="h-4 w-4" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs text-muted-foreground">{c.label}</div>
-                  <div className="text-sm font-medium truncate">{c.value}</div>
+                  <div className="micro-label">{c.label}</div>
+                  <div className="text-sm font-medium truncate text-ink">{c.value}</div>
                 </div>
               </a>
             ))}
@@ -672,7 +683,7 @@ export function Contact() {
 
           <form
             onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-            className="lg:col-span-3 glass glow-border rounded-3xl p-6 md:p-8 space-y-4"
+            className="paper-card rounded-3xl p-6 md:p-8 space-y-4"
           >
             <div className="grid md:grid-cols-2 gap-4">
               <Field label="Name" name="name" placeholder="Your full name" required />
@@ -680,12 +691,12 @@ export function Contact() {
             </div>
             <Field label="Company" name="company" placeholder="Company (optional)" />
             <div>
-              <label className="text-xs text-muted-foreground mb-1 block">Message</label>
+              <label className="micro-label mb-1 block">Message</label>
               <textarea
                 required
-                rows={5}
+                rows={6}
                 placeholder="How can I help?"
-                className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/30 transition"
+                className="w-full rounded-2xl bg-white/70 border border-black/10 px-4 py-3 text-sm text-ink placeholder:text-muted-foreground focus:outline-none focus:border-ink/60 focus:ring-2 focus:ring-ink/10 transition"
               />
             </div>
             <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
@@ -694,9 +705,12 @@ export function Contact() {
               </div>
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-[0_10px_30px_-8px_oklch(0.68_0.2_255/0.7)] hover:shadow-[0_16px_40px_-8px_oklch(0.68_0.2_255/0.9)] transition-all"
+                className="group inline-flex items-center gap-2 rounded-full pl-5 pr-2 py-2 text-sm font-medium bg-ink text-paper hover:opacity-90 transition"
               >
-                <Send className="h-4 w-4" /> Send Message
+                Send message
+                <span className="h-7 w-7 rounded-full bg-paper/15 grid place-items-center group-hover:rotate-45 transition-transform">
+                  <Send className="h-3.5 w-3.5" />
+                </span>
               </button>
             </div>
           </form>
@@ -709,14 +723,14 @@ export function Contact() {
 function Field(props: { label: string; name: string; type?: string; placeholder?: string; required?: boolean }) {
   return (
     <div>
-      <label htmlFor={props.name} className="text-xs text-muted-foreground mb-1 block">{props.label}</label>
+      <label htmlFor={props.name} className="micro-label mb-1 block">{props.label}</label>
       <input
         id={props.name}
         name={props.name}
         type={props.type ?? "text"}
         required={props.required}
         placeholder={props.placeholder}
-        className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/30 transition"
+        className="w-full rounded-2xl bg-white/70 border border-black/10 px-4 py-3 text-sm text-ink placeholder:text-muted-foreground focus:outline-none focus:border-ink/60 focus:ring-2 focus:ring-ink/10 transition"
       />
     </div>
   );
@@ -725,37 +739,48 @@ function Field(props: { label: string; name: string; type?: string; placeholder?
 // ---------- FOOTER ----------
 export function Footer() {
   return (
-    <footer className="relative pt-16 pb-10 px-6 border-t border-white/10 mt-10">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8 items-start">
+    <footer className="relative pt-16 pb-10 px-6 border-t border-black/10 mt-10">
+      <div className="max-w-[1200px] mx-auto">
+        <div className="grid md:grid-cols-[2fr_1fr_1fr] gap-10 items-start">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-accent grid place-items-center font-bold text-primary-foreground">S</div>
-              <span className="font-display font-semibold">Sarfraaj Khan</span>
+            <div className="font-display font-black text-4xl md:text-5xl text-ink leading-[0.95] tracking-[-0.04em]">
+              Let&apos;s work{" "}
+              <span className="font-italic-serif italic font-normal text-lime">together.</span>
             </div>
-            <p className="text-sm text-muted-foreground">
-              IT Support Engineer · System Administrator · Microsoft 365 & Azure Administrator
-            </p>
+            <a
+              href="mailto:sarfaraajsince2004@gmail.com"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-ink hover:text-lime"
+            >
+              <Download className="h-4 w-4" /> Download resume
+            </a>
           </div>
           <div>
-            <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Explore</div>
+            <div className="micro-label mb-3">Explore</div>
             <ul className="space-y-1.5 text-sm">
-              {["About", "Expertise", "Experience", "Projects", "Contact"].map((l) => (
-                <li key={l}><a href={`#${l.toLowerCase()}`} className="text-muted-foreground hover:text-foreground">{l}</a></li>
+              {["About", "Skills", "Experience", "Projects", "Contact"].map((l) => (
+                <li key={l}>
+                  <a href={`#${l.toLowerCase()}`} className="text-ink/70 hover:text-ink">{l}</a>
+                </li>
               ))}
             </ul>
           </div>
           <div>
-            <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Get in touch</div>
-            <a href="mailto:sarfaraajsince2004@gmail.com" className="text-sm block hover:text-cyan">sarfaraajsince2004@gmail.com</a>
-            <div className="text-sm text-muted-foreground mt-1">Gurugram, Haryana · India</div>
+            <div className="micro-label mb-3">Elsewhere</div>
+            <ul className="space-y-1.5 text-sm">
+              <li><a href="mailto:sarfaraajsince2004@gmail.com" className="text-ink/70 hover:text-ink">Email</a></li>
+              <li><a href="tel:+918826457998" className="text-ink/70 hover:text-ink">Phone</a></li>
+              <li><a href="#" className="text-ink/70 hover:text-ink">LinkedIn</a></li>
+            </ul>
           </div>
         </div>
-        <div className="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-          <div>Designed & Developed by Sarfraaj Khan.</div>
-          <div>© 2026 All Rights Reserved.</div>
+        <div className="mt-10 pt-6 border-t border-black/10 flex flex-col md:flex-row items-center justify-between gap-3 micro-label">
+          <div>Sarfraaj Khan · IT Support Engineer</div>
+          <div>© 2026 · All rights reserved</div>
         </div>
       </div>
     </footer>
   );
 }
+
+// Keep Briefcase import used
+void Briefcase;
