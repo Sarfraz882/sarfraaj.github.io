@@ -217,13 +217,7 @@ export function About() {
           description="From daily L1/L2 support to Microsoft 365 & Azure administration, endpoint security rollouts and vendor coordination — I own the whole lifecycle of the systems people rely on."
         />
 
-        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 items-start">
-          <div className="paper-card rounded-3xl p-3">
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-rose-100 via-white to-sky-100">
-              <img src={AVATAR} alt="Sarfraaj Khan" className="w-full h-full object-cover" />
-            </div>
-          </div>
-
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
           <div>
             <div className="grid grid-cols-2 gap-3">
               {chips.map((c) => (
@@ -233,28 +227,28 @@ export function About() {
                 </div>
               ))}
             </div>
-            <div className="mt-6 paper-card rounded-3xl p-6">
-              <div className="micro-label mb-3">Experience</div>
-              <div className="flex items-baseline gap-4">
-                <div className="font-display font-black text-6xl md:text-7xl text-ink leading-none">3.8+</div>
-                <div className="text-sm text-muted-foreground max-w-xs">
-                  Years supporting enterprise environments across Microsoft 365, Azure,
-                  Windows Server, macOS and networking.
-                </div>
+          </div>
+          <div className="paper-card rounded-3xl p-6">
+            <div className="micro-label mb-3">Experience</div>
+            <div className="flex items-baseline gap-4">
+              <div className="font-display font-black text-6xl md:text-7xl text-ink leading-none">3.8+</div>
+              <div className="text-sm text-muted-foreground max-w-xs">
+                Years supporting enterprise environments across Microsoft 365, Azure,
+                Windows Server, macOS and networking.
               </div>
-              <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-                {[
-                  "Shipped EDR & endpoint security across full org fleet",
-                  "500+ devices managed across two enterprise programs",
-                  "Owns vendor management, licensing & IT procurement",
-                ].map((t) => (
-                  <li key={t} className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-lime mt-0.5 shrink-0" />
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
+            <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+              {[
+                "Shipped EDR & endpoint security across full org fleet",
+                "500+ devices managed across two enterprise programs",
+                "Owns vendor management, licensing & IT procurement",
+              ].map((t) => (
+                <li key={t} className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-lime mt-0.5 shrink-0" />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
