@@ -83,18 +83,23 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     background-image:
-      radial-gradient(ellipse 80% 60% at 20% 0%, oklch(0.35 0.15 260 / 0.35), transparent 60%),
-      radial-gradient(ellipse 60% 50% at 80% 30%, oklch(0.4 0.18 220 / 0.25), transparent 55%);
+      radial-gradient(ellipse 80% 60% at 20% 0%, oklch(0.4 0.25 300 / 0.4), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 30%, oklch(0.4 0.22 330 / 0.28), transparent 55%);
     background-attachment: fixed;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    font-weight: 700;
   }
   ::selection {
-    background: oklch(0.68 0.18 250 / 0.35);
+    background: oklch(0.62 0.26 300 / 0.4);
   }
 }
+
+@utility font-hand {
+  font-family: var(--font-hand);
+  font-weight: 500;
 
 @utility glass {
   background: linear-gradient(135deg, oklch(1 0 0 / 0.06), oklch(1 0 0 / 0.02));
