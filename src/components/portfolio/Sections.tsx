@@ -7,8 +7,9 @@ import {
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-const AVATAR =
-  "https://api.dicebear.com/9.x/notionists/svg?seed=Sarfraaj&backgroundColor=fecaca,bae6fd,ddd6fe&backgroundType=gradientLinear&radius=20";
+import portraitAsset from "@/assets/sarfraaj-portrait.jpg.asset.json";
+
+const AVATAR = portraitAsset.url;
 
 // ---------- HERO ----------
 export function Hero() {
