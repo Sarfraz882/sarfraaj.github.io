@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import {
-  ArrowRight, Download, Mail, ChevronDown, Cloud, Shield, Server, Network,
-  Cpu, Database, Wifi, Lock, Monitor, Globe, Users, Zap, CheckCircle2,
+  Download, Mail, ChevronDown, Cloud, Shield, Server, Network,
+  Database, Lock, Monitor, Globe, Users, Zap, CheckCircle2,
   Briefcase, GraduationCap, Award, Github, Linkedin, Phone, MapPin,
   Building2, Sparkles, Terminal, Layers, Send
 } from "lucide-react";
