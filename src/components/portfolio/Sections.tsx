@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import {
-  ArrowRight, Download, Mail, ChevronDown, Cloud, Shield, Server, Network,
-  Cpu, Database, Wifi, Lock, Monitor, Globe, Users, Zap, CheckCircle2,
+  Download, Mail, ChevronDown, Cloud, Shield, Server, Network,
+  Database, Lock, Monitor, Globe, Users, Zap, CheckCircle2,
   Briefcase, GraduationCap, Award, Github, Linkedin, Phone, MapPin,
   Building2, Sparkles, Terminal, Layers, Send
 } from "lucide-react";
@@ -10,85 +10,114 @@ import { useEffect, useRef, useState } from "react";
 // ---------- HERO ----------
 export function Hero() {
   return (
-    <section id="top" className="relative min-h-screen flex items-center pt-28 pb-20 px-6">
+    <section id="top" className="relative min-h-screen flex items-center pt-32 pb-24 px-6">
       <div className="max-w-6xl mx-auto w-full">
+        {/* Greeting row with avatar */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs text-muted-foreground mb-8"
+          transition={{ duration: 0.5 }}
+          className="flex items-center gap-4 mb-10"
         >
-          <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-          Available for enterprise IT roles · Gurugram, IN
+          <div className="relative">
+            <div className="absolute inset-0 rounded-full bg-primary/50 blur-2xl animate-pulse-glow" />
+            <img
+              src="https://api.dicebear.com/9.x/notionists/svg?seed=Sarfraaj&backgroundColor=6d28d9,7c3aed,8b5cf6&backgroundType=gradientLinear"
+              alt="Sarfraaj avatar"
+              className="relative h-16 w-16 rounded-full ring-2 ring-primary/60 shadow-[0_0_40px_oklch(0.62_0.28_300/0.6)] bg-secondary"
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-hand text-2xl text-cyan leading-none">Hello! I am</span>
+            <span className="font-display text-2xl font-semibold tracking-tight">Sarfraaj Khan</span>
+          </div>
         </motion.div>
 
+        {/* Huge annotated headline */}
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight max-w-5xl"
+          className="font-display font-extrabold leading-[0.95] tracking-[-0.04em] text-[3.25rem] sm:text-7xl md:text-8xl lg:text-[8.5rem]"
         >
-          Building <span className="text-gradient">reliable</span><br />
-          enterprise IT<br />
-          infrastructure.
+          <span className="text-foreground">An IT Engineer </span>
+          <span className="font-hand text-cyan text-[0.55em] align-middle mx-2">who</span>
+          <br />
+          <span className="text-foreground">makes systems </span>
+          <span className="relative inline-block">
+            <span className="text-violet-glow">just&nbsp;work</span>
+            {/* hand-drawn circle */}
+            <svg
+              className="absolute -inset-x-4 -inset-y-3 w-[calc(100%+2rem)] h-[calc(100%+1.5rem)] pointer-events-none"
+              viewBox="0 0 400 140"
+              preserveAspectRatio="none"
+              fill="none"
+            >
+              <motion.ellipse
+                cx="200" cy="70" rx="188" ry="58"
+                stroke="oklch(0.82 0.16 315)" strokeWidth="2.5" strokeLinecap="round"
+                strokeDasharray="900"
+                initial={{ strokeDashoffset: 900 }}
+                animate={{ strokeDashoffset: 0 }}
+                transition={{ duration: 1.8, delay: 0.9, ease: "easeInOut" }}
+              />
+            </svg>
+          </span>
+          <span className="text-foreground">.</span>
         </motion.h1>
 
+        {/* Sub with hand-scribble underline */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl"
+          transition={{ duration: 0.6, delay: 0.35 }}
+          className="mt-10 text-lg md:text-xl text-muted-foreground max-w-2xl"
         >
-          Experienced IT Support Engineer with expertise in Microsoft 365, Azure Administration,
-          Windows Server, Endpoint Security, Enterprise Networking, macOS, and Google Workspace.
+          Currently{" "}
+          <span className="relative text-foreground font-medium">
+            IT Executive at Prasatti Group
+            <svg className="absolute left-0 right-0 -bottom-2 w-full" height="8" viewBox="0 0 300 8" preserveAspectRatio="none">
+              <path d="M2 5 Q 75 1, 150 4 T 298 3" stroke="oklch(0.72 0.22 320)" strokeWidth="2" fill="none" strokeLinecap="round" />
+            </svg>
+          </span>
+          . Four+ years supporting enterprise environments — Microsoft 365, Azure,
+          Windows Server, endpoint security and everything in between.
         </motion.p>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-4 text-sm md:text-base text-muted-foreground/80 max-w-2xl"
-        >
-          Four+ years supporting enterprise environments — resolving complex issues, hardening
-          endpoints, and delivering secure, scalable systems that never get in the way of work.
-        </motion.p>
-
+        {/* CTA row */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-10 flex flex-wrap items-center gap-3"
         >
-          <a
-            href="#"
-            className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-[0_10px_30px_-8px_oklch(0.68_0.2_255/0.7)] hover:shadow-[0_16px_40px_-8px_oklch(0.68_0.2_255/0.9)] transition-all"
-          >
+          <a href="#" className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-[0_14px_40px_-10px_oklch(0.6_0.28_300/0.8)] hover:shadow-[0_20px_50px_-10px_oklch(0.6_0.28_300/1)] transition-all">
             <Download className="h-4 w-4" /> Download Resume
           </a>
-          <a
-            href="#contact"
-            className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold glass glow-border hover:bg-white/10 transition-all"
-          >
-            <Mail className="h-4 w-4" /> Contact Me
+          <a href="#contact" className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold glass glow-border hover:bg-white/10 transition-all">
+            <Mail className="h-4 w-4" /> Let's talk
           </a>
-          <a
-            href="#experience"
-            className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-muted-foreground hover:text-foreground"
-          >
-            View Experience <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </a>
+          <span className="font-hand text-xl text-cyan ml-2 hidden md:inline">↙ start here</span>
         </motion.div>
 
-        {/* floating tech icons */}
-        <div className="mt-16 hidden md:flex items-center gap-8 opacity-70">
-          {[Cloud, Shield, Server, Network, Cpu, Database, Wifi, Lock].map((Icon, i) => (
+        {/* floating tech chip row */}
+        <div className="mt-16 flex flex-wrap items-center gap-3">
+          {[
+            { icon: Cloud, label: "M365" },
+            { icon: Layers, label: "Azure" },
+            { icon: Server, label: "Win Server" },
+            { icon: Shield, label: "EDR" },
+            { icon: Network, label: "Networking" },
+            { icon: Monitor, label: "macOS" },
+            { icon: Lock, label: "Security" },
+          ].map((c, i) => (
             <motion.div
-              key={i}
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 3 + i * 0.3, repeat: Infinity, ease: "easeInOut", delay: i * 0.2 }}
-              className="h-10 w-10 grid place-items-center rounded-xl glass"
+              key={c.label}
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 3 + i * 0.25, repeat: Infinity, ease: "easeInOut", delay: i * 0.15 }}
+              className="inline-flex items-center gap-2 rounded-full glass px-3.5 py-1.5 text-xs text-muted-foreground"
             >
-              <Icon className="h-5 w-5 text-cyan" />
+              <c.icon className="h-3.5 w-3.5 text-cyan" /> {c.label}
             </motion.div>
           ))}
         </div>
