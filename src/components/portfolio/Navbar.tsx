@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { ArrowUp, FileText, Menu, Moon, Sun, X } from "lucide-react";
 import portraitAsset from "@/assets/sarfraaj-portrait.jpg.asset.json";
+import resumeAsset from "@/assets/resume.pdf.asset.json";
 
 function useTheme() {
   const [dark, setDark] = useState(false);
@@ -79,13 +80,16 @@ export function Navbar() {
               {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </button>
             <a
-              href="#contact"
+              href="#about"
               className="hidden sm:inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] font-mono border border-black/10 hover:bg-black/5"
             >
               Index
             </a>
             <a
-              href="#contact"
+              href={resumeAsset.url}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[11px] uppercase tracking-[0.18em] font-mono bg-ink text-paper hover:opacity-90"
             >
               <FileText className="h-3.5 w-3.5" /> Resume
