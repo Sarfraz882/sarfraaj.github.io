@@ -733,9 +733,9 @@ export function Footer() {
           <div>
             <div className="micro-label mb-3">Elsewhere</div>
             <ul className="space-y-1.5 text-sm">
-              <li><a href="mailto:sarfaraajsince2004@gmail.com" className="text-ink/70 hover:text-ink">Email</a></li>
+              <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=sarfaraajsince2004@gmail.com" target="_blank" rel="noopener noreferrer" className="text-ink/70 hover:text-ink">Email</a></li>
               <li><a href="tel:+918826457998" className="text-ink/70 hover:text-ink">Phone</a></li>
-              <li><a href="#" className="text-ink/70 hover:text-ink">LinkedIn</a></li>
+              <li><a href="https://www.linkedin.com/in/sarfraaj-khan-a52776329/" target="_blank" rel="noopener noreferrer" className="text-ink/70 hover:text-ink">LinkedIn</a></li>
             </ul>
           </div>
         </div>
