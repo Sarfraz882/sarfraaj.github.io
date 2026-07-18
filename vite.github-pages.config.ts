@@ -4,6 +4,7 @@ import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 
 const githubPagesBase = process.env.VITE_GITHUB_PAGES_BASE ?? "/sarfraaj.github.io/";
+const githubPagesEntry = fileURLToPath(new URL("./github-pages.html", import.meta.url));
 
 function normalizeBase(base: string | undefined) {
   if (!base || base === ".") return "/";
@@ -21,5 +22,8 @@ export default defineConfig({
   build: {
     outDir: "dist/client",
     emptyOutDir: true,
+    rollupOptions: {
+      input: githubPagesEntry,
+    },
   },
 });
