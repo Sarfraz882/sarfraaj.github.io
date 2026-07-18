@@ -612,13 +612,15 @@ export function Contact() {
               { icon: Mail, label: "Email", value: "sarfaraajsince2004@gmail.com", href: "mailto:sarfaraajsince2004@gmail.com" },
               { icon: Phone, label: "Phone", value: "+91 88264 57998", href: "tel:+918826457998" },
               { icon: MapPin, label: "Location", value: "Gurugram, Haryana · India", href: "#" },
-              { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/sarfraaj", href: "#" },
+              { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/sarfraaj", href: "https://www.linkedin.com/in/sarfraaj", external: true },
               { icon: Building2, label: "Currently at", value: "Prasatti Group · IT Executive", href: "#" },
               { icon: GraduationCap, label: "Education", value: "Bachelor of Arts", href: "#" },
             ].map((c) => (
               <a
                 key={c.label}
                 href={c.href}
+                target={"external" in c && c.external ? "_blank" : undefined}
+                rel={"external" in c && c.external ? "noopener noreferrer" : undefined}
                 className="flex items-center gap-4 paper-card rounded-2xl p-4 hover:-translate-y-0.5 transition-transform"
               >
                 <div className="h-10 w-10 rounded-full bg-ink text-paper grid place-items-center">
