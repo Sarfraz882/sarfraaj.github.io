@@ -34,6 +34,7 @@
   --color-paper: var(--paper);
   --color-lime: var(--lime);
   --color-mist: var(--mist);
+  --color-cyan-accent: var(--cyan-accent);
   --font-display: "Bricolage Grotesque", "Space Grotesk", sans-serif;
   --font-serif-italic: "Instrument Serif", "Times New Roman", serif;
   --font-sans: "Inter", system-ui, sans-serif;
@@ -42,30 +43,37 @@
 
 :root {
   --radius: 1.25rem;
-  /* Rahim-inspired light theme — crisp white, coral accent */
-  --background: oklch(0.995 0.002 250);
-  --foreground: oklch(0.14 0.02 265);
-  --ink: oklch(0.10 0.02 265);
-  --paper: oklch(1 0 0);
-  --card: oklch(1 0 0 / 80%);
-  --card-foreground: oklch(0.14 0.02 265);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.14 0.02 265);
-  --primary: oklch(0.14 0.02 265);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.96 0.005 265);
-  --secondary-foreground: oklch(0.14 0.02 265);
-  --muted: oklch(0.96 0.005 265);
-  --muted-foreground: oklch(0.5 0.015 265);
-  --accent: oklch(0.75 0.16 45); /* coral / peach */
-  --accent-foreground: oklch(0.14 0.02 265);
+  /* Enterprise dark navy + electric blue + cyan */
+  --background: oklch(0.16 0.04 260);
+  --foreground: oklch(0.95 0.01 240);
+  --ink: oklch(0.98 0.005 240);           /* used as headline color */
+  --paper: oklch(0.10 0.04 260);          /* deep navy surface */
+  --card: oklch(0.22 0.05 260 / 60%);
+  --card-foreground: oklch(0.95 0.01 240);
+  --popover: oklch(0.16 0.04 260);
+  --popover-foreground: oklch(0.95 0.01 240);
+  --primary: oklch(0.68 0.19 245);        /* electric blue */
+  --primary-foreground: oklch(0.10 0.04 260);
+  --secondary: oklch(0.24 0.05 260);
+  --secondary-foreground: oklch(0.95 0.01 240);
+  --muted: oklch(0.22 0.04 260);
+  --muted-foreground: oklch(0.72 0.02 240);
+  --accent: oklch(0.85 0.14 210);         /* cyan */
+  --accent-foreground: oklch(0.10 0.04 260);
   --destructive: oklch(0.62 0.22 25);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.14 0.02 265 / 8%);
-  --input: oklch(0.14 0.02 265 / 10%);
-  --ring: oklch(0.14 0.02 265);
-  --lime: oklch(0.75 0.16 45); /* coral accent used across components */
-  --mist: oklch(0.92 0.01 265);
+  --border: oklch(0.75 0.10 235 / 14%);
+  --input: oklch(0.75 0.10 235 / 18%);
+  --ring: oklch(0.68 0.19 245);
+  --lime: oklch(0.78 0.15 220);           /* legacy token → now electric cyan */
+  --mist: oklch(0.30 0.06 260);
+  --cyan-accent: oklch(0.85 0.14 210);
+
+  --gradient-radial: radial-gradient(1200px 700px at 15% -10%, oklch(0.35 0.16 250 / 0.55), transparent 60%),
+                     radial-gradient(900px 600px at 100% 20%, oklch(0.55 0.18 210 / 0.35), transparent 60%),
+                     radial-gradient(800px 500px at 50% 110%, oklch(0.45 0.20 260 / 0.35), transparent 60%);
+  --shadow-elegant: 0 30px 80px -30px oklch(0.10 0.10 260 / 0.7);
+  --shadow-glow: 0 0 40px oklch(0.68 0.19 245 / 0.35);
 }
 
 
@@ -82,9 +90,10 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     background-image:
-      linear-gradient(to right, oklch(0.14 0.02 265 / 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, oklch(0.14 0.02 265 / 0.05) 1px, transparent 1px);
-    background-size: 56px 56px;
+      var(--gradient-radial),
+      linear-gradient(to right, oklch(0.75 0.10 235 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.75 0.10 235 / 0.05) 1px, transparent 1px);
+    background-size: auto, 56px 56px, 56px 56px;
     background-attachment: fixed;
   }
 
@@ -95,8 +104,8 @@
     color: var(--ink);
   }
   ::selection {
-    background: var(--lime);
-    color: var(--ink);
+    background: var(--primary);
+    color: var(--primary-foreground);
   }
 }
 
@@ -113,7 +122,17 @@
 }
 
 @utility text-lime {
-  color: var(--lime);
+  background: linear-gradient(120deg, oklch(0.78 0.16 230), oklch(0.88 0.14 200));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-blue {
+  background: linear-gradient(120deg, oklch(0.72 0.19 245), oklch(0.88 0.14 200));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @utility micro-label {
@@ -125,17 +144,43 @@
 }
 
 @utility paper-card {
-  background: linear-gradient(135deg, oklch(1 0 0 / 0.7), oklch(1 0 0 / 0.35));
-  backdrop-filter: blur(18px) saturate(140%);
-  border: 1px solid oklch(0.14 0.02 265 / 0.08);
-  box-shadow: 0 1px 0 oklch(1 0 0 / 0.6) inset, 0 20px 60px -30px oklch(0.14 0.02 265 / 0.25);
+  background: linear-gradient(135deg, oklch(0.28 0.06 260 / 0.55), oklch(0.18 0.05 260 / 0.35));
+  backdrop-filter: blur(22px) saturate(160%);
+  border: 1px solid oklch(0.75 0.10 235 / 0.16);
+  border-radius: 1.5rem;
+  box-shadow:
+    0 1px 0 oklch(1 0 0 / 0.06) inset,
+    0 30px 80px -40px oklch(0.05 0.05 260 / 0.9),
+    0 0 0 1px oklch(0.68 0.19 245 / 0.04);
+  transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+@utility paper-card {
+  &:hover {
+    border-color: oklch(0.68 0.19 245 / 0.4);
+    box-shadow:
+      0 1px 0 oklch(1 0 0 / 0.08) inset,
+      0 40px 100px -40px oklch(0.05 0.05 260 / 0.95),
+      0 0 40px oklch(0.68 0.19 245 / 0.18);
+  }
 }
 
 @utility pill {
   border-radius: 9999px;
-  border: 1px solid oklch(0.14 0.02 265 / 0.12);
-  background: oklch(1 0 0 / 0.7);
-  backdrop-filter: blur(14px);
+  border: 1px solid oklch(0.75 0.10 235 / 0.22);
+  background: oklch(0.22 0.05 260 / 0.55);
+  backdrop-filter: blur(14px) saturate(160%);
+  color: var(--ink);
+}
+
+@utility btn-primary {
+  background: linear-gradient(135deg, oklch(0.62 0.20 250), oklch(0.75 0.16 220));
+  color: oklch(0.98 0.005 240);
+  box-shadow: 0 10px 30px -10px oklch(0.55 0.20 250 / 0.6), 0 0 0 1px oklch(0.85 0.14 210 / 0.2) inset;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 45px -12px oklch(0.55 0.20 250 / 0.75), 0 0 0 1px oklch(0.85 0.14 210 / 0.3) inset;
+  }
 }
 
 @keyframes marquee {
