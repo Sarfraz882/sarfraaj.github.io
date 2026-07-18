@@ -633,7 +633,18 @@ export function Contact() {
           </div>
 
           <form
-            onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+            onSubmit={(e) => {
+              e.preventDefault();
+              const fd = new FormData(e.currentTarget);
+              const name = String(fd.get("name") || "");
+              const email = String(fd.get("email") || "");
+              const company = String(fd.get("company") || "");
+              const message = String(fd.get("message") || "");
+              const subject = `Portfolio inquiry from ${name}`;
+              const body = `Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\n${message}`;
+              window.location.href = `mailto:sarfaraajsince2004@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+              setSent(true);
+            }}
             className="paper-card rounded-3xl p-6 md:p-8 space-y-4"
           >
             <div className="grid md:grid-cols-2 gap-4">
@@ -645,6 +656,7 @@ export function Contact() {
               <label className="micro-label mb-1 block">Message</label>
               <textarea
                 required
+                name="message"
                 rows={6}
                 placeholder="How can I help?"
                 className="w-full rounded-2xl bg-white/70 border border-black/10 px-4 py-3 text-sm text-ink placeholder:text-muted-foreground focus:outline-none focus:border-ink/60 focus:ring-2 focus:ring-ink/10 transition"
