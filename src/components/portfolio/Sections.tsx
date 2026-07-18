@@ -49,7 +49,7 @@ export function Hero() {
           </span>
           <br />
           <span className="inline-flex items-center gap-4 md:gap-6 flex-wrap justify-center mt-2">
-            <span className="text-lime">M365 / Azure Admin.</span>
+            <span className="text-lime">L1 / L2 Support.</span>
             <span className="inline-flex items-center gap-2 pill px-3 py-1.5 align-middle">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
