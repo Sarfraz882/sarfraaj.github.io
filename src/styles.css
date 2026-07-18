@@ -82,11 +82,12 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     background-image:
-      radial-gradient(ellipse 90% 60% at 0% 40%, oklch(0.92 0.05 15 / 0.55), transparent 60%),
-      radial-gradient(ellipse 80% 60% at 100% 20%, oklch(0.9 0.06 240 / 0.5), transparent 60%),
-      radial-gradient(ellipse 60% 40% at 60% 100%, oklch(0.94 0.04 300 / 0.4), transparent 60%);
+      linear-gradient(to right, oklch(0.14 0.02 265 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.14 0.02 265 / 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
     background-attachment: fixed;
   }
+
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     letter-spacing: -0.045em;
