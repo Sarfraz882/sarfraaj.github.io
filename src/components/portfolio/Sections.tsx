@@ -613,8 +613,8 @@ export function Contact() {
               { icon: Phone, label: "Phone", value: "+91 88264 57998", href: "tel:+918826457998" },
               { icon: MapPin, label: "Location", value: "Gurugram, Haryana · India", href: "https://www.google.com/maps/place/Gurugram,+Haryana", external: true },
               { icon: Linkedin, label: "LinkedIn", value: "www.linkedin.com/in/sarfraaj-engineer", href: "https://www.linkedin.com/in/sarfraaj-engineer/", external: true },
-              { icon: Building2, label: "Currently at", value: "Prasatti Group · IT Executive", href: "https://www.linkedin.com/in/sarfraaj-khan-a52776329/", external: true },
-              { icon: GraduationCap, label: "Education", value: "Bachelor of Arts", href: "https://www.linkedin.com/in/sarfraaj-khan-a52776329/", external: true },
+              { icon: Building2, label: "Currently at", value: "Prasatti Group · IT Executive", href: "https://www.linkedin.com/in/sarfraaj-engineer/", external: true },
+              { icon: GraduationCap, label: "Education", value: "Bachelor of Arts", href: "https://www.linkedin.com/in/sarfraaj-engineer/", external: true },
             ].map((c) => (
               <a
                 key={c.label}
