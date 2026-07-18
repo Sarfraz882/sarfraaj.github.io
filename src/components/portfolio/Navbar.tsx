@@ -34,6 +34,7 @@ const NAV = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const { dark, toggle } = useTheme();
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
 
