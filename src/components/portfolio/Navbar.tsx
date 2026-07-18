@@ -24,7 +24,9 @@ export function Navbar() {
       <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[min(1200px,94%)]">
         <div className="pill flex items-center justify-between pl-2 pr-2 py-2">
           <a href="#top" className="flex items-center gap-2 pl-1">
-            <span className="h-8 w-8 rounded-full bg-ink text-paper grid place-items-center font-display font-black text-sm">s</span>
+            <span className="h-8 w-8 rounded-full overflow-hidden ring-1 ring-black/10 bg-ink">
+              <img src={portraitAsset.url} alt="Sarfraaj Khan" className="h-full w-full object-cover" />
+            </span>
             <span className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink">Sarfraaj/2026</span>
           </a>
 
