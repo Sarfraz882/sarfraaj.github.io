@@ -32,7 +32,7 @@ export function Navbar() {
               <a
                 key={n.id}
                 href={`#${n.id}`}
-                className="px-3 py-1.5 text-[13px] text-muted-foreground hover:text-ink rounded-full hover:bg-black/5 transition-colors"
+                className="px-3 py-1.5 text-[13px] text-muted-foreground hover:text-ink rounded-full hover:bg-white/5 transition-colors"
               >
                 {n.label}
               </a>
@@ -43,13 +43,13 @@ export function Navbar() {
             <button
               onClick={() => setOpen((v) => !v)}
               aria-label="Menu"
-              className="md:hidden h-9 w-9 grid place-items-center rounded-full border border-black/10 bg-white/60"
+              className="md:hidden h-9 w-9 grid place-items-center rounded-full border border-white/10 bg-white/5"
             >
               {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </button>
             <a
               href="#contact"
-              className="hidden sm:inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] font-mono border border-black/10 hover:bg-black/5"
+              className="hidden sm:inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] font-mono border border-white/10 hover:bg-white/5"
             >
               Index
             </a>
@@ -69,7 +69,7 @@ export function Navbar() {
                 key={n.id}
                 href={`#${n.id}`}
                 onClick={() => setOpen(false)}
-                className="px-3 py-2 text-sm text-ink hover:bg-black/5 rounded-lg"
+                className="px-3 py-2 text-sm text-ink hover:bg-white/5 rounded-lg"
               >
                 {n.label}
               </a>

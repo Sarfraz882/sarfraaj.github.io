@@ -389,7 +389,7 @@ export function Experience() {
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {j.tags.map((t) => (
-                    <span key={t} className="text-[11px] font-mono uppercase tracking-[0.14em] px-2.5 py-1 rounded-full border border-black/10 text-ink/80">
+                    <span key={t} className="text-[11px] font-mono uppercase tracking-[0.14em] px-2.5 py-1 rounded-full border border-white/10 text-ink/80">
                       {t}
                     </span>
                   ))}
@@ -463,7 +463,7 @@ export function Projects() {
             >
               <div className="flex items-center justify-between mb-6">
                 <div className="micro-label">{p.n}</div>
-                <span className="text-[10px] font-mono uppercase tracking-[0.18em] px-2 py-1 rounded-full border border-black/10 text-ink/80">
+                <span className="text-[10px] font-mono uppercase tracking-[0.18em] px-2 py-1 rounded-full border border-white/10 text-ink/80">
                   {p.tag}
                 </span>
               </div>
@@ -472,7 +472,7 @@ export function Projects() {
               </div>
               <h3 className="font-display font-bold text-xl leading-tight text-ink">{p.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{p.overview}</p>
-              <div className="mt-5 pt-4 border-t border-black/10 flex items-start gap-2 text-xs text-ink/80">
+              <div className="mt-5 pt-4 border-t border-white/10 flex items-start gap-2 text-xs text-ink/80">
                 <Sparkles className="h-3.5 w-3.5 text-lime shrink-0 mt-0.5" />
                 <span>{p.outcome}</span>
               </div>
@@ -499,8 +499,8 @@ export function Certifications() {
   ];
   const badge = (s: string) => {
     if (s === "Completed") return "bg-lime/15 text-ink border-lime/40";
-    if (s === "In Progress") return "bg-amber-500/10 text-amber-700 border-amber-500/30";
-    return "bg-black/5 text-muted-foreground border-black/10";
+    if (s === "In Progress") return "bg-amber-500/10 text-amber-300 border-amber-500/30";
+    return "bg-white/5 text-muted-foreground border-white/10";
   };
   return (
     <section id="certifications" className="relative py-24 md:py-32 px-6">
@@ -576,7 +576,7 @@ export function Testimonials() {
             >
               <div className="font-italic-serif italic text-5xl text-lime leading-none">&ldquo;</div>
               <p className="mt-2 text-[15px] text-ink leading-relaxed">{t.quote}</p>
-              <div className="mt-6 pt-4 border-t border-black/10">
+              <div className="mt-6 pt-4 border-t border-white/10">
                 <div className="font-medium text-sm text-ink">{t.name}</div>
                 <div className="micro-label mt-0.5">{t.role}</div>
               </div>
@@ -646,7 +646,7 @@ export function Contact() {
                 required
                 rows={6}
                 placeholder="How can I help?"
-                className="w-full rounded-2xl bg-white/70 border border-black/10 px-4 py-3 text-sm text-ink placeholder:text-muted-foreground focus:outline-none focus:border-ink/60 focus:ring-2 focus:ring-ink/10 transition"
+                className="w-full rounded-2xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-ink placeholder:text-muted-foreground focus:outline-none focus:border-ink/60 focus:ring-2 focus:ring-ink/10 transition"
               />
             </div>
             <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
@@ -680,7 +680,7 @@ function Field(props: { label: string; name: string; type?: string; placeholder?
         type={props.type ?? "text"}
         required={props.required}
         placeholder={props.placeholder}
-        className="w-full rounded-2xl bg-white/70 border border-black/10 px-4 py-3 text-sm text-ink placeholder:text-muted-foreground focus:outline-none focus:border-ink/60 focus:ring-2 focus:ring-ink/10 transition"
+        className="w-full rounded-2xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-ink placeholder:text-muted-foreground focus:outline-none focus:border-ink/60 focus:ring-2 focus:ring-ink/10 transition"
       />
     </div>
   );
@@ -689,7 +689,7 @@ function Field(props: { label: string; name: string; type?: string; placeholder?
 // ---------- FOOTER ----------
 export function Footer() {
   return (
-    <footer className="relative pt-16 pb-10 px-6 border-t border-black/10 mt-10">
+    <footer className="relative pt-16 pb-10 px-6 border-t border-white/10 mt-10">
       <div className="max-w-[1200px] mx-auto">
         <div className="grid md:grid-cols-[2fr_1fr_1fr] gap-10 items-start">
           <div>
@@ -723,7 +723,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-10 pt-6 border-t border-black/10 flex flex-col md:flex-row items-center justify-between gap-3 micro-label">
+        <div className="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 micro-label">
           <div>Sarfraaj Khan · IT Support Engineer</div>
           <div>© 2026 · All rights reserved</div>
         </div>
