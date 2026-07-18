@@ -71,6 +71,13 @@ export function Navbar() {
             >
               {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </button>
+            <button
+              onClick={toggle}
+              aria-label="Toggle theme"
+              className="h-9 w-9 grid place-items-center rounded-full border border-black/10 dark:border-white/15 bg-white/60 dark:bg-white/5 hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+            >
+              {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            </button>
             <a
               href="#contact"
               className="hidden sm:inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] font-mono border border-black/10 hover:bg-black/5"
