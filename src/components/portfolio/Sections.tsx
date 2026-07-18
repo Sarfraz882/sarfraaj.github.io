@@ -612,7 +612,7 @@ export function Contact() {
               { icon: Mail, label: "Email", value: "sarfaraajsince2004@gmail.com", href: "https://mail.google.com/mail/?view=cm&fs=1&to=sarfaraajsince2004@gmail.com", external: true },
               { icon: Phone, label: "Phone", value: "+91 88264 57998", href: "tel:+918826457998" },
               { icon: MapPin, label: "Location", value: "Gurugram, Haryana · India", href: "https://www.google.com/maps/place/Gurugram,+Haryana", external: true },
-              { icon: Linkedin, label: "LinkedIn", value: "www.linkedin.com/in/sarfraaj-khan-a52776329", href: "https://www.linkedin.com/in/sarfraaj-khan-a52776329/", external: true },
+              { icon: Linkedin, label: "LinkedIn", value: "www.linkedin.com/in/sarfraaj-engineer", href: "https://www.linkedin.com/in/sarfraaj-engineer/", external: true },
               { icon: Building2, label: "Currently at", value: "Prasatti Group · IT Executive", href: "https://www.linkedin.com/in/sarfraaj-khan-a52776329/", external: true },
               { icon: GraduationCap, label: "Education", value: "Bachelor of Arts", href: "https://www.linkedin.com/in/sarfraaj-khan-a52776329/", external: true },
             ].map((c) => (
