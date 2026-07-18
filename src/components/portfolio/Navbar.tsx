@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { ArrowUp, FileText, Menu, Moon, Sun, X } from "lucide-react";
-import portraitAsset from "@/assets/sarfraaj-portrait.jpg.asset.json";
-import resumeAsset from "@/assets/resume.pdf.asset.json";
+
+const assetBase = import.meta.env.BASE_URL;
+const portraitUrl = `${assetBase}assets/sarfraaj-portrait.jpg`;
+const resumeUrl = `${assetBase}assets/Sarfraaj-Khan-Resume.pdf`;
 
 function useTheme() {
   const [dark, setDark] = useState(false);
@@ -47,7 +49,7 @@ export function Navbar() {
         <div className="pill flex items-center justify-between pl-2 pr-2 py-2">
           <a href="#top" className="flex items-center gap-2 pl-1">
             <span className="h-8 w-8 rounded-full overflow-hidden ring-1 ring-black/10 bg-ink">
-              <img src={portraitAsset.url} alt="Sarfraaj Khan" className="h-full w-full object-cover" />
+              <img src={portraitUrl} alt="Sarfraaj Khan" className="h-full w-full object-cover" />
             </span>
             <span className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink">Sarfraaj/2026</span>
           </a>
@@ -86,7 +88,7 @@ export function Navbar() {
               Index
             </a>
             <a
-              href={resumeAsset.url}
+              href={resumeUrl}
               download
               target="_blank"
               rel="noopener noreferrer"
