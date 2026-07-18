@@ -123,28 +123,7 @@ function LogoMarquee() {
 }
 
 
-function LogoMarquee() {
-  const items = [
-    "Microsoft 365", "Azure", "Windows Server", "Active Directory",
-    "Intune", "Entra ID", "Google Workspace", "EDR / EPP",
-    "Firewall", "VPN", "macOS", "Windows 11",
-  ];
-  const doubled = [...items, ...items];
-  return (
-    <div className="mt-16 relative overflow-hidden">
-      <div className="flex gap-10 animate-marquee whitespace-nowrap w-max">
-        {doubled.map((t, i) => (
-          <div key={i} className="flex items-center gap-3">
-            <span className="h-1.5 w-1.5 rounded-full bg-ink/40" />
-            <span className="font-display font-bold text-2xl md:text-3xl text-ink/70">{t}</span>
-          </div>
-        ))}
-      </div>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent" />
-    </div>
-  );
-}
+
 
 // ---------- SECTION HEADER ----------
 function SectionHeader({
