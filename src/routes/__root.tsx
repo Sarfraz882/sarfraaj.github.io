@@ -12,6 +12,9 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
+const homeHref = import.meta.env.BASE_URL;
+const faviconHref = `${import.meta.env.BASE_URL}favicon.ico`;
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -61,7 +64,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             Try again
           </button>
           <a
-            href="/"
+            href={homeHref}
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
             Go home
@@ -101,7 +104,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800;12..96,900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: faviconHref, type: "image/x-icon" },
     ],
   }),
   shellComponent: RootShell,

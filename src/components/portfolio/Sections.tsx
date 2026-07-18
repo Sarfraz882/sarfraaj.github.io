@@ -7,10 +7,9 @@ import {
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-import portraitAsset from "@/assets/sarfraaj-portrait.jpg.asset.json";
-import resumeAsset from "@/assets/resume.pdf.asset.json";
-
-const AVATAR = portraitAsset.url;
+const assetBase = import.meta.env.BASE_URL;
+const AVATAR = `${assetBase}assets/sarfraaj-portrait.jpg`;
+const RESUME_URL = `${assetBase}assets/Sarfraaj-Khan-Resume.pdf`;
 
 // ---------- HERO ----------
 export function Hero() {
@@ -713,7 +712,7 @@ export function Footer() {
               <span className="font-italic-serif italic font-normal text-lime">together.</span>
             </div>
             <a
-              href={resumeAsset.url}
+              href={RESUME_URL}
               download="Sarfraaj-Khan-Resume.pdf"
               className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-ink hover:text-lime"
             >
