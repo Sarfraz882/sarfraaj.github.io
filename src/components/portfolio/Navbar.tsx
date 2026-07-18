@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { ArrowUp, FileText, Menu, Moon, Sun, X } from "lucide-react";
 import portraitAsset from "@/assets/sarfraaj-portrait.jpg.asset.json";
+import resumeAsset from "@/assets/resume.pdf.asset.json";
 
 function useTheme() {
   const [dark, setDark] = useState(false);
