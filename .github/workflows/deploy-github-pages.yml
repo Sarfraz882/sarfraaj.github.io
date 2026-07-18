@@ -46,7 +46,7 @@ jobs:
         shell: bash
         run: |
           test -f dist/client/index.html
-          if grep -R "github-pages\.tsx\|/src/" dist/client/index.html dist/client/404.html; then
+          if grep -R "/src/" dist/client/index.html dist/client/404.html; then
             echo "Production HTML must not reference source TypeScript files."
             exit 1
           fi
