@@ -14,138 +14,114 @@ const AVATAR = portraitAsset.url;
 // ---------- HERO ----------
 export function Hero() {
   return (
-    <section id="top" className="relative min-h-screen flex items-center pt-28 pb-16 px-6">
-      <div className="max-w-[1200px] mx-auto w-full">
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
+    <section id="top" className="relative min-h-screen flex items-center justify-center pt-32 pb-16 px-6">
+      <div className="max-w-[1200px] mx-auto w-full text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 pill px-3 py-1.5 mb-10 md:mb-14"
+          transition={{ duration: 0.7 }}
+          className="font-display font-black leading-[1.02] tracking-[-0.045em] text-[3rem] sm:text-6xl md:text-7xl lg:text-[7rem] text-ink"
         >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-lime" />
+          <span className="inline-flex items-center gap-4 md:gap-6 flex-wrap justify-center">
+            Hi, I&rsquo;m
+            <motion.span
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="relative inline-block align-middle"
+            >
+              <span
+                className="absolute inset-0 rounded-full blur-2xl"
+                style={{ background: "var(--accent)", opacity: 0.5 }}
+              />
+              <img
+                src={AVATAR}
+                alt="Sarfraaj Khan"
+                className="relative h-16 w-16 md:h-24 md:w-24 lg:h-28 lg:w-28 rounded-full object-cover ring-4 ring-white shadow-xl"
+              />
+            </motion.span>
+            Sarfraaj
           </span>
-          <span className="font-mono text-[11px] tracking-[0.2em] uppercase text-ink">
-            Available · Q1 2026
+          <br />
+          <span className="inline-flex items-center gap-4 flex-wrap justify-center mt-2">
+            <span className="font-italic-serif italic font-normal text-muted-foreground">I&rsquo;m an</span>
+            IT Support
+            <span className="font-italic-serif italic font-normal text-muted-foreground">&amp;</span>
           </span>
+          <br />
+          <span className="inline-flex items-center gap-4 md:gap-6 flex-wrap justify-center mt-2">
+            <span className="text-lime">M365 / Azure Admin.</span>
+            <span className="inline-flex items-center gap-2 pill px-3 py-1.5 align-middle">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              </span>
+              <span className="font-mono text-[11px] tracking-[0.16em] uppercase text-ink">Open to work</span>
+            </span>
+          </span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-10 max-w-2xl mx-auto text-[15px] md:text-base text-muted-foreground leading-relaxed"
+        >
+          I keep enterprise systems, networks and people online — 3.8+ years across
+          Microsoft 365, Azure, Windows Server, endpoint security and Google Workspace.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
+          className="mt-10 flex flex-wrap items-center justify-center gap-3"
+        >
+          <a
+            href="#projects"
+            className="group inline-flex items-center gap-2 rounded-full pl-5 pr-2 py-2 text-sm font-medium bg-ink text-paper hover:opacity-90 transition"
+          >
+            See the work
+            <span className="h-7 w-7 rounded-full bg-paper/15 grid place-items-center group-hover:rotate-45 transition-transform">
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </span>
+          </a>
+          <a
+            href="#contact"
+            className="text-[13px] uppercase tracking-[0.2em] font-mono text-ink hover:text-lime transition"
+          >
+            Get in touch
+          </a>
         </motion.div>
 
-        <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
-          {/* Headline */}
-          <div>
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.05 }}
-              className="font-display font-black leading-[0.92] tracking-[-0.05em] text-[3.2rem] sm:text-6xl md:text-7xl lg:text-[7.2rem] text-ink"
-            >
-              IT engineer
-              <br />
-              keeping{" "}
-              <span className="font-italic-serif text-lime font-normal italic">
-                systems,
-              </span>
-              <br />
-              networks &amp;
-              <br />
-              people online.
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-8 max-w-xl text-[15px] md:text-base text-muted-foreground leading-relaxed"
-            >
-              I&apos;m <span className="text-ink font-medium">Sarfraaj</span> — an IT
-              Support Engineer with 3.8+ years across Microsoft 365, Azure Administration,
-              Windows Server, endpoint security, networking and enterprise
-              hardware.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.45 }}
-              className="mt-10 flex flex-wrap items-center gap-3"
-            >
-              <a
-                href="#projects"
-                className="group inline-flex items-center gap-2 rounded-full pl-5 pr-2 py-2 text-sm font-medium bg-ink text-paper hover:opacity-90 transition"
-              >
-                See the work
-                <span className="h-7 w-7 rounded-full bg-paper/15 grid place-items-center group-hover:rotate-45 transition-transform">
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </span>
-              </a>
-              <a
-                href="#contact"
-                className="text-[13px] uppercase tracking-[0.2em] font-mono text-ink hover:text-lime transition"
-              >
-                Get in touch
-              </a>
-            </motion.div>
-          </div>
-
-          {/* Portrait card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: 14 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative mx-auto w-full max-w-sm"
-          >
-            <div className="paper-card rounded-[28px] p-3 relative">
-              <div className="relative rounded-[20px] overflow-hidden bg-gradient-to-br from-rose-100 via-white to-sky-100 aspect-[4/5]">
-                <img
-                  src={AVATAR}
-                  alt="Sarfraaj Khan portrait"
-                  className="w-full h-full object-cover"
-                />
-                {/* now chip */}
-                <motion.div
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute top-3 left-3 pill px-3 py-1.5 flex items-center gap-2"
-                >
-                  <div className="flex flex-col leading-none">
-                    <span className="micro-label">Now</span>
-                    <span className="text-[13px] font-medium text-ink">Keeping IT up</span>
-                  </div>
-                </motion.div>
-                {/* years chip */}
-                <motion.div
-                  animate={{ y: [0, 6, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute bottom-3 right-3 pill px-3 py-1.5 flex items-center gap-2"
-                >
-                  <span className="h-1.5 w-1.5 rounded-full bg-lime" />
-                  <span className="font-mono text-[11px] tracking-[0.16em] uppercase text-ink">3.8 yrs · craft</span>
-                </motion.div>
-                <div className="absolute bottom-3 left-3">
-                  <div className="micro-label">Engineer · Portrait</div>
-                  <div className="font-display font-bold text-ink text-lg leading-none mt-1">Sarfraaj K.</div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Bottom row */}
-        <div className="mt-16 flex flex-wrap items-center justify-between gap-6 pt-6 border-t border-black/10">
-          <div className="flex items-center gap-3">
-            <span className="micro-label">Scroll</span>
-            <span className="h-px w-14 bg-ink/40" />
-          </div>
-          <div className="micro-label">Gurugram, Haryana · Remote friendly</div>
-        </div>
-
-        {/* Marquee tech row */}
         <LogoMarquee />
       </div>
     </section>
   );
 }
+
+function LogoMarquee() {
+  const items = [
+    "Microsoft 365", "Azure", "Windows Server", "Active Directory",
+    "Intune", "Entra ID", "Google Workspace", "EDR / EPP",
+    "Firewall", "VPN", "macOS", "Windows 11",
+  ];
+  const doubled = [...items, ...items];
+  return (
+    <div className="mt-20 relative overflow-hidden">
+      <div className="flex gap-10 animate-marquee whitespace-nowrap w-max">
+        {doubled.map((t, i) => (
+          <div key={i} className="flex items-center gap-3">
+            <span className="h-1.5 w-1.5 rounded-full bg-ink/40" />
+            <span className="font-display font-bold text-2xl md:text-3xl text-ink/70">{t}</span>
+          </div>
+        ))}
+      </div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent" />
+    </div>
+  );
+}
+
 
 function LogoMarquee() {
   const items = [
