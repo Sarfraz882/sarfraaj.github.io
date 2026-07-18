@@ -609,7 +609,7 @@ export function Contact() {
         <div className="grid lg:grid-cols-[1fr_1.2fr] gap-6">
           <div className="grid gap-3">
             {[
-              { icon: Mail, label: "Email", value: "sarfaraajsince2004@gmail.com", href: "mailto:sarfaraajsince2004@gmail.com" },
+              { icon: Mail, label: "Email", value: "sarfaraajsince2004@gmail.com", href: "https://mail.google.com/mail/?view=cm&fs=1&to=sarfaraajsince2004@gmail.com", external: true },
               { icon: Phone, label: "Phone", value: "+91 88264 57998", href: "tel:+918826457998" },
               { icon: MapPin, label: "Location", value: "Gurugram, Haryana · India", href: "#" },
               { icon: Linkedin, label: "LinkedIn", value: "www.linkedin.com/in/sarfraaj-khan-a52776329", href: "https://www.linkedin.com/in/sarfraaj-khan-a52776329/", external: true },
