@@ -44,7 +44,7 @@ export function Hero() {
           <br />
           <span className="inline-flex items-center gap-4 flex-wrap justify-center mt-2">
             <span className="font-italic-serif italic font-normal text-muted-foreground">I&rsquo;m an</span>
-            IT Support
+            IT Support Engineer
             <span className="font-italic-serif italic font-normal text-muted-foreground">&amp;</span>
           </span>
           <br />
