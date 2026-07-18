@@ -8,6 +8,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 
 import portraitAsset from "@/assets/sarfraaj-portrait.jpg.asset.json";
+import resumeAsset from "@/assets/resume.pdf.asset.json";
 
 const AVATAR = portraitAsset.url;
 
