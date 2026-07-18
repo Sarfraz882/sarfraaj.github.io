@@ -619,6 +619,8 @@ export function Contact() {
               <a
                 key={c.label}
                 href={c.href}
+                target={"external" in c && c.external ? "_blank" : undefined}
+                rel={"external" in c && c.external ? "noopener noreferrer" : undefined}
                 className="flex items-center gap-4 paper-card rounded-2xl p-4 hover:-translate-y-0.5 transition-transform"
               >
                 <div className="h-10 w-10 rounded-full bg-ink text-paper grid place-items-center">
