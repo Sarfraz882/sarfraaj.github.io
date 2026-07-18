@@ -42,6 +42,17 @@ jobs:
       - name: Build static site
         run: bun run build:github
 
+      - name: Verify production HTML uses compiled assets
+        shell: bash
+        run: |
+          test -f dist/client/index.html
+          if grep -R "github-pages\.tsx\|/src/" dist/client/index.html dist/client/404.html; then
+            echo "Production HTML must not reference source TypeScript files."
+            exit 1
+          fi
+          grep -q 'src=".*/assets/.*\.js"' dist/client/index.html
+          grep -q 'href=".*/assets/.*\.css"' dist/client/index.html
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 

@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 
-const githubPagesBase = process.env.VITE_GITHUB_PAGES_BASE;
+const githubPagesBase = process.env.VITE_GITHUB_PAGES_BASE ?? "/sarfraaj.github.io/";
 
 function normalizeBase(base: string | undefined) {
   if (!base || base === ".") return "/";
