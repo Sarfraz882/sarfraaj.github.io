@@ -1,7 +1,27 @@
 import { useEffect, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { ArrowUp, FileText, Menu, X } from "lucide-react";
+import { ArrowUp, FileText, Menu, Moon, Sun, X } from "lucide-react";
 import portraitAsset from "@/assets/sarfraaj-portrait.jpg.asset.json";
+
+function useTheme() {
+  const [dark, setDark] = useState(false);
+  useEffect(() => {
+    const stored = localStorage.getItem("theme");
+    const prefers = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = stored ? stored === "dark" : prefers;
+    setDark(isDark);
+    document.documentElement.classList.toggle("dark", isDark);
+  }, []);
+  const toggle = () => {
+    setDark((d) => {
+      const next = !d;
+      document.documentElement.classList.toggle("dark", next);
+      localStorage.setItem("theme", next ? "dark" : "light");
+      return next;
+    });
+  };
+  return { dark, toggle };
+}
 
 const NAV = [
   { id: "about", label: "About" },
