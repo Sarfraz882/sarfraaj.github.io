@@ -8,6 +8,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 
 import portraitAsset from "@/assets/sarfraaj-portrait.jpg.asset.json";
+import resumeAsset from "@/assets/resume.pdf.asset.json";
 
 const AVATAR = portraitAsset.url;
 
@@ -698,7 +699,8 @@ export function Footer() {
               <span className="font-italic-serif italic font-normal text-lime">together.</span>
             </div>
             <a
-              href="mailto:sarfaraajsince2004@gmail.com"
+              href={resumeAsset.url}
+              download="Sarfraaj-Khan-Resume.pdf"
               className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-ink hover:text-lime"
             >
               <Download className="h-4 w-4" /> Download resume
