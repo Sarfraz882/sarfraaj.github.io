@@ -23,7 +23,7 @@ export function Navbar() {
       <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[min(1200px,94%)]">
         <div className="pill flex items-center justify-between pl-2 pr-2 py-2">
           <a href="#top" className="flex items-center gap-2 pl-1">
-            <span className="h-8 w-8 rounded-full bg-ink text-paper grid place-items-center font-display font-black text-sm">s</span>
+            <span className="h-8 w-8 rounded-full btn-primary text-primary-foreground grid place-items-center font-display font-black text-sm">s</span>
             <span className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink">Sarfraaj/2026</span>
           </a>
 
@@ -55,7 +55,7 @@ export function Navbar() {
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[11px] uppercase tracking-[0.18em] font-mono bg-ink text-paper hover:opacity-90"
+              className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[11px] uppercase tracking-[0.18em] font-mono btn-primary text-primary-foreground hover:opacity-90"
             >
               <FileText className="h-3.5 w-3.5" /> Resume
             </a>
@@ -93,7 +93,7 @@ export function BackToTop() {
     <button
       aria-label="Back to top"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-6 right-6 z-50 h-12 w-12 grid place-items-center rounded-full bg-ink text-paper hover:scale-105 transition-transform"
+      className="fixed bottom-6 right-6 z-50 h-12 w-12 grid place-items-center rounded-full btn-primary text-primary-foreground hover:scale-105 transition-transform"
     >
       <ArrowUp className="h-5 w-5" />
     </button>

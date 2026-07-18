@@ -78,10 +78,10 @@ export function Hero() {
         >
           <a
             href="#projects"
-            className="group inline-flex items-center gap-2 rounded-full pl-5 pr-2 py-2 text-sm font-medium bg-ink text-paper hover:opacity-90 transition"
+            className="group inline-flex items-center gap-2 rounded-full pl-5 pr-2 py-2 text-sm font-medium btn-primary text-primary-foreground hover:opacity-90 transition"
           >
             See the work
-            <span className="h-7 w-7 rounded-full bg-paper/15 grid place-items-center group-hover:rotate-45 transition-transform">
+            <span className="h-7 w-7 rounded-full bg-white/20 grid place-items-center group-hover:rotate-45 transition-transform">
               <ArrowUpRight className="h-3.5 w-3.5" />
             </span>
           </a>
@@ -303,7 +303,7 @@ export function Expertise() {
             >
               <div className="flex items-center justify-between mb-6">
                 <div className="micro-label">{g.n}</div>
-                <div className="h-10 w-10 rounded-full bg-ink text-paper grid place-items-center">
+                <div className="h-10 w-10 rounded-full btn-primary text-primary-foreground grid place-items-center">
                   <g.icon className="h-4 w-4" />
                 </div>
               </div>
@@ -467,7 +467,7 @@ export function Projects() {
                   {p.tag}
                 </span>
               </div>
-              <div className="h-11 w-11 rounded-full bg-ink text-paper grid place-items-center mb-4">
+              <div className="h-11 w-11 rounded-full btn-primary text-primary-foreground grid place-items-center mb-4">
                 <p.icon className="h-4 w-4" />
               </div>
               <h3 className="font-display font-bold text-xl leading-tight text-ink">{p.title}</h3>
@@ -527,7 +527,7 @@ export function Certifications() {
               className="paper-card rounded-3xl p-6 hover:-translate-y-1 transition-transform"
             >
               <div className="flex items-start justify-between mb-6">
-                <div className="h-11 w-11 rounded-full bg-ink text-paper grid place-items-center">
+                <div className="h-11 w-11 rounded-full btn-primary text-primary-foreground grid place-items-center">
                   <Award className="h-5 w-5" />
                 </div>
                 <span className={`text-[10px] font-mono uppercase tracking-[0.18em] px-2 py-1 rounded-full border ${badge(c.status)}`}>
@@ -620,7 +620,7 @@ export function Contact() {
                 href={c.href}
                 className="flex items-center gap-4 paper-card rounded-2xl p-4 hover:-translate-y-0.5 transition-transform"
               >
-                <div className="h-10 w-10 rounded-full bg-ink text-paper grid place-items-center">
+                <div className="h-10 w-10 rounded-full btn-primary text-primary-foreground grid place-items-center">
                   <c.icon className="h-4 w-4" />
                 </div>
                 <div className="min-w-0">
@@ -646,7 +646,7 @@ export function Contact() {
                 required
                 rows={6}
                 placeholder="How can I help?"
-                className="w-full rounded-2xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-ink placeholder:text-muted-foreground focus:outline-none focus:border-ink/60 focus:ring-2 focus:ring-ink/10 transition"
+                className="w-full rounded-2xl bg-white/5 border border-white/15 px-4 py-3 text-sm text-ink placeholder:text-muted-foreground focus:outline-none focus:border-ink/60 focus:ring-2 focus:ring-ink/10 transition"
               />
             </div>
             <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
@@ -655,10 +655,10 @@ export function Contact() {
               </div>
               <button
                 type="submit"
-                className="group inline-flex items-center gap-2 rounded-full pl-5 pr-2 py-2 text-sm font-medium bg-ink text-paper hover:opacity-90 transition"
+                className="group inline-flex items-center gap-2 rounded-full pl-5 pr-2 py-2 text-sm font-medium btn-primary text-primary-foreground hover:opacity-90 transition"
               >
                 Send message
-                <span className="h-7 w-7 rounded-full bg-paper/15 grid place-items-center group-hover:rotate-45 transition-transform">
+                <span className="h-7 w-7 rounded-full bg-white/20 grid place-items-center group-hover:rotate-45 transition-transform">
                   <Send className="h-3.5 w-3.5" />
                 </span>
               </button>
@@ -680,7 +680,7 @@ function Field(props: { label: string; name: string; type?: string; placeholder?
         type={props.type ?? "text"}
         required={props.required}
         placeholder={props.placeholder}
-        className="w-full rounded-2xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-ink placeholder:text-muted-foreground focus:outline-none focus:border-ink/60 focus:ring-2 focus:ring-ink/10 transition"
+        className="w-full rounded-2xl bg-white/5 border border-white/15 px-4 py-3 text-sm text-ink placeholder:text-muted-foreground focus:outline-none focus:border-ink/60 focus:ring-2 focus:ring-ink/10 transition"
       />
     </div>
   );
