@@ -1,7 +1,27 @@
 import { useEffect, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { ArrowUp, FileText, Menu, X } from "lucide-react";
+import { ArrowUp, FileText, Menu, Moon, Sun, X } from "lucide-react";
 import portraitAsset from "@/assets/sarfraaj-portrait.jpg.asset.json";
+
+function useTheme() {
+  const [dark, setDark] = useState(false);
+  useEffect(() => {
+    const stored = localStorage.getItem("theme");
+    const prefers = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = stored ? stored === "dark" : prefers;
+    setDark(isDark);
+    document.documentElement.classList.toggle("dark", isDark);
+  }, []);
+  const toggle = () => {
+    setDark((d) => {
+      const next = !d;
+      document.documentElement.classList.toggle("dark", next);
+      localStorage.setItem("theme", next ? "dark" : "light");
+      return next;
+    });
+  };
+  return { dark, toggle };
+}
 
 const NAV = [
   { id: "about", label: "About" },
@@ -14,6 +34,7 @@ const NAV = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const { dark, toggle } = useTheme();
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
 
@@ -49,6 +70,13 @@ export function Navbar() {
               className="md:hidden h-9 w-9 grid place-items-center rounded-full border border-black/10 bg-white/60"
             >
               {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            </button>
+            <button
+              onClick={toggle}
+              aria-label="Toggle theme"
+              className="h-9 w-9 grid place-items-center rounded-full border border-black/10 dark:border-white/15 bg-white/60 dark:bg-white/5 hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+            >
+              {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </button>
             <a
               href="#contact"
