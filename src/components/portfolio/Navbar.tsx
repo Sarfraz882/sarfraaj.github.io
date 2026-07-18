@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { ArrowUp, FileText, Menu, X } from "lucide-react";
+import portraitAsset from "@/assets/sarfraaj-portrait.jpg.asset.json";
 
 const NAV = [
   { id: "about", label: "About" },
